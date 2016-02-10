@@ -1,0 +1,6 @@
+framework module Pods_WIMB {
+  umbrella header "Pods-WIMB-umbrella.h"
+
+  export *
+  module * { export * }
+}
