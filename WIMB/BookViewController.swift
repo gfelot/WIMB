@@ -22,20 +22,15 @@ class BookViewController: UIViewController, ScanBookDelegate {
         if book == nil {
             performSegueWithIdentifier("scanCode", sender: nil)
         } else {
-            bookImage.image = book.getCover()
+            print("Test")
+//            print(book.getTitle())
+//            print(book.getCover())
         }
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if book != nil {
-            print(book.getAuthor())
-            print(book.getISBN())
-            print(book.getTitle())
-            
-        }
     }
 
     

@@ -22,6 +22,7 @@
 		AD45BDBB1C42B202007BD1B8 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45BDBA1C42B202007BD1B8 /* Book.swift */; };
 		AD45BDBD1C42C276007BD1B8 /* iu.png in Resources */ = {isa = PBXBuildFile; fileRef = AD45BDBC1C42C276007BD1B8 /* iu.png */; };
 		ADFA85071C3C683B007D2945 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFA85061C3C683B007D2945 /* LoginViewController.swift */; };
+		C80FD59A665929005D8563E2 /* BookTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80FD39F919C305A475F6666 /* BookTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		AD45BDBA1C42B202007BD1B8 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		AD45BDBC1C42C276007BD1B8 /* iu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iu.png; sourceTree = "<group>"; };
 		ADFA85061C3C683B007D2945 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C80FD39F919C305A475F6666 /* BookTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTest.swift; sourceTree = "<group>"; };
 		EC6233B0B956A1D0C30A41F8 /* Pods_WIMB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WIMB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				AD45BDBA1C42B202007BD1B8 /* Book.swift */,
+				C80FD39F919C305A475F6666 /* BookTest.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -198,7 +201,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = gfelot;
 				TargetAttributes = {
 					81BA81441A49DA1800E65899 = {
@@ -310,6 +313,7 @@
 				AD45BDB71C417CD7007BD1B8 /* ScanBookViewController.swift in Sources */,
 				AD45BDBB1C42B202007BD1B8 /* Book.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				C80FD59A665929005D8563E2 /* BookTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +352,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;

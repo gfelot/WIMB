@@ -85,9 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-WIMB/Alamofire.framework"
-  install_framework "Pods-WIMB/SwiftyJSON.framework"
+  install_framework "Pods-WIMB/Gloss.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-WIMB/Alamofire.framework"
-  install_framework "Pods-WIMB/SwiftyJSON.framework"
+  install_framework "Pods-WIMB/Gloss.framework"
 fi

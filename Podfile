@@ -6,6 +6,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'WIMB' do
   pod 'Alamofire', '~> 3.0'
-  pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+  pod 'Gloss', '~> 0.7'
 end
 
