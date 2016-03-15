@@ -19,8 +19,10 @@ struct BookItems: Decodable {
 }
 
 struct Book: Decodable {
+    let selfLinkString:String!
     let selfLink:NSURL!
-    let coverURL:imageLinks!
+    let imagesLinks:imageLinks!
+    let coverURL:NSURL!
     let title:String!
     let authors:[String]!
     let isbn:[ISBN]!
@@ -32,14 +34,15 @@ struct Book: Decodable {
     let language:String!
     let categories:[String]!
     let averageRating:Double! //min 1 to max 5
+    let previewLinkString:String!
     let previewLink:NSURL!
 
 
     init?(json: JSON) {
 
         self.id = "id" <~~ json
-        self.selfLink = "selfLink" <~~ json
-        self.coverURL = "volumeInfo.imageLinks" <~~ json
+        self.selfLinkString = "selfLink" <~~ json
+        self.imagesLinks = "volumeInfo.imageLinks" <~~ json
         self.title = "volumeInfo.title" <~~ json
         self.authors = "volumeInfo.authors" <~~ json
         self.isbn = "volumeInfo.industryIdentifiers" <~~ json
@@ -50,21 +53,36 @@ struct Book: Decodable {
         self.language = "volumeInfo.language" <~~ json
         self.categories = "volumeInfo.categories" <~~ json
         self.averageRating = "volumeInfo.averageRating" <~~ json
-        self.previewLink = "volumeInfo.previewLink" <~~ json
+        self.previewLinkString = "volumeInfo.previewLink" <~~ json
         
+        
+        func httpsConverter(str:String!) -> NSURL {
+            var tmp = str
+            if str != nil {
+                if tmp.hasPrefix("http://") {
+                    tmp.removeRange(Range<String.Index>(str.startIndex ..< str.startIndex.advancedBy(7)))
+                    tmp.insertContentsOf("https://".characters, at: str.startIndex)
+                }
+            }
+            return NSURL(string: tmp)!
+        }
+        
+        self.selfLink = httpsConverter(self.selfLinkString)
+        self.previewLink = httpsConverter(self.previewLinkString)
+        self.coverURL = httpsConverter(self.imagesLinks.coverString)
     }
     
 }
 
 struct imageLinks: Decodable {
     
-    let coverString: NSURL!
+    let coverString: String!
     
     init?(json: JSON) {
-        let medium: NSURL! = "medium" <~~ json
-        let small: NSURL! = "small" <~~ json
-        let thumbnail: NSURL! = "thumbnail" <~~ json
-        let smallThumbnail: NSURL! = "smallThumbnail" <~~ json
+        let medium: String! = "medium" <~~ json
+        let small: String! = "small" <~~ json
+        let thumbnail: String! = "thumbnail" <~~ json
+        let smallThumbnail: String! = "smallThumbnail" <~~ json
         
         if (medium != nil) {
             self.coverString = medium
