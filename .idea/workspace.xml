@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed874ee6-1321-4dc7-93a4-2be83e6d711c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WIMB/BookTest.swift" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Local Podspecs/SwiftyJSON.podspec.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SwiftyJSON/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SwiftyJSON/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SwiftyJSON/Source/SwiftyJSON.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyJSON/Info.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-umbrella.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.modulemap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.xcconfig" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.markdown" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.plist" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-frameworks.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-frameworks.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.debug.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.release.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/Resources/Base.lproj/Main.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WIMB.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/WIMB.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WIMB/AppDelegate.swift" afterPath="$PROJECT_DIR$/WIMB/AppDelegate.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WIMB/Book.swift" afterPath="$PROJECT_DIR$/WIMB/Book.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WIMB/BookViewController.swift" afterPath="$PROJECT_DIR$/WIMB/BookViewController.swift" />
-    </list>
+    <list default="true" id="ed874ee6-1321-4dc7-93a4-2be83e6d711c" name="Default" comment="" />
     <ignored path="WIMB.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/WIMB/BookViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="22" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="22" />
+              <caret line="2" column="8" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -93,8 +64,8 @@
       <file leaf-file-name="ScanBookViewController.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WIMB/ScanBookViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59398496">
-              <caret line="116" column="68" selection-start-line="116" selection-start-column="68" selection-end-line="116" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.63909775">
+              <caret line="118" column="68" selection-start-line="118" selection-start-column="68" selection-end-line="118" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -324,7 +295,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -588,15 +559,15 @@
     <entry file="file://$PROJECT_DIR$/WIMB/BookViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="22" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="22" />
+          <caret line="2" column="8" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WIMB/ScanBookViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59398496">
-          <caret line="116" column="68" selection-start-line="116" selection-start-column="68" selection-end-line="116" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.63909775">
+          <caret line="118" column="68" selection-start-line="118" selection-start-column="68" selection-end-line="118" selection-end-column="68" />
           <folding />
         </state>
       </provider>

@@ -12,14 +12,14 @@ import Alamofire
 
 class BookViewController: UIViewController, ScanBookDelegate {
     
-    var book:Book!
+    var bookItems:BookItems!
     
     @IBOutlet weak var bookImage: UIImageView!
     @IBOutlet weak var bookTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if book == nil {
+        if bookItems == nil {
             performSegueWithIdentifier("scanCode", sender: nil)
         } else {
             print("Test")
@@ -42,9 +42,10 @@ class BookViewController: UIViewController, ScanBookDelegate {
         }
     }
     
-    func didScanBook(scannedBook:Book)
+    func didScanBook(scannedBook:BookItems!)
     {
-        self.book = scannedBook
+        self.bookItems = scannedBook
+        print("My Book Object : \(bookItems)")
     }
 
 }

@@ -10,33 +10,21 @@ import Foundation
 import UIKit
 import Gloss
 
-struct imageLinks: Decodable {
-    
-    let coverString: String!
+struct BookItems: Decodable {
+    let data: [Book]?
     
     init?(json: JSON) {
-        if let _medium: String = "medium" <~~ json {
-            coverString = _medium
-        } else if let _small: String! = "small" <~~ json {
-            coverString = _small
-        } else if let _thumbnail: String! = "thumbnail" <~~ json {
-            coverString = _thumbnail
-        } else if let _smallThumbnail: String! = "smallThumbnail" <~~ json {
-            coverString = _smallThumbnail
-        } else {
-            coverString = nil
-        }
+        self.data = "items" <~~ json
     }
-    
 }
 
 struct Book: Decodable {
-    let selfLink:String!
+    let selfLink:NSURL!
     let coverURL:imageLinks!
     let title:String!
     let authors:[String]!
-//    let ISBN13:String!
-    let ID:String!
+    let isbn:[ISBN]!
+    let id:String!
     let desc:String!
     let publisher:String!
     let publishedDate:String!
@@ -44,85 +32,61 @@ struct Book: Decodable {
     let language:String!
     let categories:[String]!
     let averageRating:Double! //min 1 to max 5
-    let previewLink:String!
+    let previewLink:NSURL!
 
 
     init?(json: JSON) {
-        guard let data: JSON = "items" <~~ json else {
-            print("Error no JSON data available")
-            return nil
-        }
-        
-        guard let _selfLink: String = "selfLink" <~~ data else {
-            return nil
-        }
-        selfLink = _selfLink
-        
-        guard let _coverURL: imageLinks = "imageLinks" <~~ data else {
-            return nil
-        }
-        coverURL = _coverURL
-        
-        guard let _title: String = "volumeInfo.title" <~~ data else {
-            return nil
-        }
-        title = _title
-        
-        guard let _authors: [String] = "volumeInfo.authors" <~~ data else {
-            return nil
-        }
-        authors = _authors
-        
-//        guard let _ISNB13: String = "volumeInfo.industryIdentifiers" <~~ data else {
-//            return nil
-//        }
-//        ISBN13 = _ISNB13
-        
-        guard let _id: String = "id" <~~ data else {
-            return nil
-        }
-        ID = _id
-        
-        guard let _desc: String = "volumeInfo.description" <~~ data else {
-            return nil
-        }
-        desc = _desc
-        
-        guard let _publisher: String = "volumeInfo.publisher" <~~ data else {
-            return nil
-        }
-        publisher = _publisher
-        
-        guard let _publishedDate: String = "volumeInfo.publishedDate" <~~ data else {
-            return nil
-        }
-        publishedDate = _publishedDate
-        
-        guard let _pageCount: Int = "volumeInfo.pageCount" <~~ data else {
-            return nil
-        }
-        pageCount = _pageCount
-        
-        guard let _language: String = "volumeInfo.language" <~~ data else {
-            return nil
-        }
-        language = _language
-        
-        guard let _categories: [String] = "volumeInfo.categories" <~~ data else {
-            return nil
-        }
-        categories = _categories
-        
-        guard let _averageRating: Double = "volumeInfo.averageRating" <~~ data else {
-            return nil
-        }
-        averageRating = _averageRating
-        
-        guard let _previewLink: String = "volumeInfo.previewLink" <~~ data else {
-            return nil
-        }
-        previewLink = _previewLink
+
+        self.id = "id" <~~ json
+        self.selfLink = "selfLink" <~~ json
+        self.coverURL = "volumeInfo.imageLinks" <~~ json
+        self.title = "volumeInfo.title" <~~ json
+        self.authors = "volumeInfo.authors" <~~ json
+        self.isbn = "volumeInfo.industryIdentifiers" <~~ json
+        self.desc = "volumeInfo.description" <~~ json
+        self.publisher = "volumeInfo.publisher" <~~ json
+        self.publishedDate = "volumeInfo.publishedDate" <~~ json
+        self.pageCount = "volumeInfo.pageCount" <~~ json
+        self.language = "volumeInfo.language" <~~ json
+        self.categories = "volumeInfo.categories" <~~ json
+        self.averageRating = "volumeInfo.averageRating" <~~ json
+        self.previewLink = "volumeInfo.previewLink" <~~ json
         
     }
     
+}
+
+struct imageLinks: Decodable {
+    
+    let coverString: NSURL!
+    
+    init?(json: JSON) {
+        let medium: NSURL! = "medium" <~~ json
+        let small: NSURL! = "small" <~~ json
+        let thumbnail: NSURL! = "thumbnail" <~~ json
+        let smallThumbnail: NSURL! = "smallThumbnail" <~~ json
+        
+        if (medium != nil) {
+            self.coverString = medium
+        } else if (small != nil) {
+            self.coverString = small
+        } else if (thumbnail != nil) {
+            self.coverString = thumbnail
+        } else if (smallThumbnail != nil) {
+            self.coverString = smallThumbnail
+        } else {
+            self.coverString = nil
+        }
+    }
+    
+}
+
+struct ISBN:Decodable {
+    let type: String!
+    let identifier:String!
+    
+    init?(json: JSON) {
+        self.type = "type" <~~ json
+        self.identifier = "identifier" <~~ json
+    }
 }
