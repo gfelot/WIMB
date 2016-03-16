@@ -21,6 +21,7 @@
 		AD45BDB91C42B07D007BD1B8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45BDB81C42B07D007BD1B8 /* BookViewController.swift */; };
 		AD45BDBB1C42B202007BD1B8 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45BDBA1C42B202007BD1B8 /* Book.swift */; };
 		AD45BDBD1C42C276007BD1B8 /* iu.png in Resources */ = {isa = PBXBuildFile; fileRef = AD45BDBC1C42C276007BD1B8 /* iu.png */; };
+		AD4A6F971C9958A100358127 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4A6F961C9958A100358127 /* Tools.swift */; };
 		ADFA85071C3C683B007D2945 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFA85061C3C683B007D2945 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		AD45BDB81C42B07D007BD1B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		AD45BDBA1C42B202007BD1B8 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		AD45BDBC1C42C276007BD1B8 /* iu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iu.png; sourceTree = "<group>"; };
+		AD4A6F961C9958A100358127 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		ADFA85061C3C683B007D2945 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EC6233B0B956A1D0C30A41F8 /* Pods_WIMB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WIMB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				AD45BDBA1C42B202007BD1B8 /* Book.swift */,
+				AD4A6F961C9958A100358127 /* Tools.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				ADFA85071C3C683B007D2945 /* LoginViewController.swift in Sources */,
 				AD45BDB91C42B07D007BD1B8 /* BookViewController.swift in Sources */,
 				AD45BDB71C417CD7007BD1B8 /* ScanBookViewController.swift in Sources */,
+				AD4A6F971C9958A100358127 /* Tools.swift in Sources */,
 				AD45BDBB1C42B202007BD1B8 /* Book.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 			);

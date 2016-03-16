@@ -12,7 +12,7 @@ import Alamofire
 
 class BookViewController: UIViewController, ScanBookDelegate {
     
-    var bookItems:BookItems!
+    var myBook:Book!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var bookImage: UIImageView!
@@ -27,20 +27,20 @@ class BookViewController: UIViewController, ScanBookDelegate {
         super.viewDidLoad()
 //        let bounds = UIScreen.mainScreen().bounds
 //        let width = bounds.size.width
-//        scrollView.contentSize.width = width
-        scrollView.contentSize.height = 4000
-        if bookItems == nil {
+        scrollView.contentSize.width = 300
+        scrollView.contentSize.height = 4000000
+        if myBook == nil {
             performSegueWithIdentifier("scanCode", sender: nil)
         }
     }
     
     override func viewDidLayoutSubviews() {
-        if bookItems != nil {
-            downloadImage((bookItems.data?.first?.coverURL)!)
-            bookTitle.text = bookItems.data?.first?.title
-            authors.text = bookItems.data?.first?.authors.first
-            desc.text = bookItems.data?.first?.desc
-            pageCount.text = String(bookItems.data?.first?.pageCount)
+        if myBook != nil {
+            downloadImage((myBook.coverURL)!)
+            bookTitle.text = myBook.title
+            authors.text = myBook.authors.first
+            desc.text = myBook.desc
+            pageCount.text = String(myBook.pageCount)
             
             bookTitle.numberOfLines = 0
             bookTitle.sizeToFit()
@@ -52,26 +52,6 @@ class BookViewController: UIViewController, ScanBookDelegate {
             pageCount.sizeToFit()
         }
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-//        if bookItems != nil {
-//            downloadImage((bookItems.data?.first?.coverURL)!)
-//            bookTitle.text = bookItems.data?.first?.title
-//            authors.text = bookItems.data?.first?.authors.first
-//            desc.text = bookItems.data?.first?.desc
-//            pageCount.text = String(bookItems.data?.first?.pageCount)
-//            
-//            bookTitle.numberOfLines = 0
-//            bookTitle.sizeToFit()
-//            authors.numberOfLines = 0
-//            authors.sizeToFit()
-//            desc.numberOfLines = 0
-//            desc.sizeToFit()
-//            pageCount.numberOfLines = 0
-//            pageCount.sizeToFit()
-//        }
-    }
 
     
     //Set book view controller as delegate to scan book view controller
@@ -82,9 +62,44 @@ class BookViewController: UIViewController, ScanBookDelegate {
         }
     }
     
+    @IBAction func saveBookToCloud(sender: AnyObject) {
+        if myBook != nil {
+            let book = PFObject(className: "Book")
+            book["id"] = myBook.id
+            book["selfLink"] = myBook.selfLinkString
+            book["coverURL"] = myBook.coverURLString
+            book["title"] = myBook.title
+            book["authors"] = myBook.authors
+//            book["isbn"] = myBook.isbn
+            book["desc"] = myBook.desc
+            book["publisher"] = myBook.publisher
+            book["publishedDate"] = myBook.publishedDate
+            book["pageCount"] = myBook.pageCount
+            book["language"] = myBook.language
+            book["categories"] = myBook.categories
+            book["averageRating"] = myBook.averageRating
+            book["previewLink"] = myBook.previewLinkString
+            
+            book.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    print("Sucess")
+                } else {
+                    print(error!)
+                }
+            }
+        
+        }
+    }
+    
+    
     func didScanBook(scannedBook:BookItems!)
     {
-        self.bookItems = scannedBook
+        
+        let bookItems: BookItems! = scannedBook
+        if bookItems != nil {
+            myBook = bookItems.data?.first
+        }
         
     }
     

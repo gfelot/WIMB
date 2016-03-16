@@ -20,29 +20,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var activityIndicator = UIActivityIndicatorView()
     
-    var loginOrSignUp = true
+    var loginStatut = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        let me = PFUser.currentUser()
+        
+        if me!.username != nil {
+            username.text = me!.username
+        } else {
+            connectButton.setTitle("SignUp", forState: .Normal)
+            signUpTextField.text = "Already an account ?"
+            changeStateButton.setTitle("Login", forState: .Normal)
+            loginStatut = false
+        }
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        if PFUser.currentUser()?.username != nil {
-            self.performSegueWithIdentifier("login", sender: self)
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     @IBAction func connectAction(sender: AnyObject) {
         guard username.text != "" && password.text != "" else {
@@ -50,26 +50,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         waitingIndicator()
-        if loginOrSignUp == true {
-            tryToSignUp()
+        if loginStatut == true {
+            tryToLogin(username.text!, _password: password.text!)
         } else {
-            tryToLogin()
+            tryToSignUp(username.text!, _password: password.text)
         }
 
     }
 
-    
     @IBAction func changeStateAction(sender: AnyObject) {
-        if loginOrSignUp == true {
+        if loginStatut == true {
             connectButton.setTitle("SignUp", forState: .Normal)
             signUpTextField.text = "Already an account ?"
             changeStateButton.setTitle("Login", forState: .Normal)
-            loginOrSignUp = false
+            loginStatut = false
         } else {
             connectButton.setTitle("Login", forState: .Normal)
             signUpTextField.text = "Wanna SignUp ?"
             changeStateButton.setTitle("SignUp", forState: .Normal)
-            loginOrSignUp = true
+            loginStatut = true
         }
     }
 
@@ -78,11 +77,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alertPopUp("Not Implemented Yet !!!", message: "But I'm gonna do it soon I promise.")
     }
     
-    func tryToSignUp() {
+    func tryToSignUp(_username: String!, _password: String!) {
         var errorMessage = "Please try again later"
         let user = PFUser()
-        user.username = username.text
-        user.password = password.text
+        user.username = _username
+        user.password = _password
         user.signUpInBackgroundWithBlock { (success, error) -> Void in
             self.activityIndicator.stopAnimating()
             UIApplication.sharedApplication().endIgnoringInteractionEvents()
@@ -97,9 +96,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func tryToLogin() {
+    func tryToLogin(_username: String!, _password: String!) {
         var errorMessage = "Please try again later"
-        PFUser.logInWithUsernameInBackground(username.text!, password: password.text!) { (user, error) -> Void in
+        PFUser.logInWithUsernameInBackground(_username, password: _password) { (user, error) -> Void in
             self.activityIndicator.stopAnimating()
             UIApplication.sharedApplication().endIgnoringInteractionEvents()
             guard user != nil else {

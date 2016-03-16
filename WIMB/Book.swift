@@ -19,14 +19,16 @@ struct BookItems: Decodable {
 }
 
 struct Book: Decodable {
+    
+    let id:String!
     let selfLinkString:String!
     let selfLink:NSURL!
     let imagesLinks:imageLinks!
+    let coverURLString:String!
     let coverURL:NSURL!
     let title:String!
     let authors:[String]!
     let isbn:[ISBN]!
-    let id:String!
     let desc:String!
     let publisher:String!
     let publishedDate:String!
@@ -39,10 +41,15 @@ struct Book: Decodable {
 
 
     init?(json: JSON) {
-
+        
+        let tools = Tools()
+        
         self.id = "id" <~~ json
-        self.selfLinkString = "selfLink" <~~ json
+        self.selfLinkString = tools.httpsConverter("selfLink" <~~ json)
+        self.selfLink = NSURL(string: self.selfLinkString)
         self.imagesLinks = "volumeInfo.imageLinks" <~~ json
+        self.coverURLString = tools.httpsConverter(self.imagesLinks.coverString)
+        self.coverURL = NSURL(string: self.coverURLString)
         self.title = "volumeInfo.title" <~~ json
         self.authors = "volumeInfo.authors" <~~ json
         self.isbn = "volumeInfo.industryIdentifiers" <~~ json
@@ -53,23 +60,9 @@ struct Book: Decodable {
         self.language = "volumeInfo.language" <~~ json
         self.categories = "volumeInfo.categories" <~~ json
         self.averageRating = "volumeInfo.averageRating" <~~ json
-        self.previewLinkString = "volumeInfo.previewLink" <~~ json
+        self.previewLinkString = tools.httpsConverter("volumeInfo.previewLink" <~~ json)
+        self.previewLink = NSURL(string: self.previewLinkString)
         
-        
-        func httpsConverter(str:String!) -> NSURL {
-            var tmp = str
-            if str != nil {
-                if tmp.hasPrefix("http://") {
-                    tmp.removeRange(Range<String.Index>(str.startIndex ..< str.startIndex.advancedBy(7)))
-                    tmp.insertContentsOf("https://".characters, at: str.startIndex)
-                }
-            }
-            return NSURL(string: tmp)!
-        }
-        
-        self.selfLink = httpsConverter(self.selfLinkString)
-        self.previewLink = httpsConverter(self.previewLinkString)
-        self.coverURL = httpsConverter(self.imagesLinks.coverString)
     }
     
 }
