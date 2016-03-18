@@ -84,10 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-WIMB/Alamofire.framework"
-  install_framework "Pods-WIMB/Gloss.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/FLAnimatedImage/FLAnimatedImage.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/Gloss/Gloss.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/PINCache/PINCache.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/PINRemoteImage/PINRemoteImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-WIMB/Alamofire.framework"
-  install_framework "Pods-WIMB/Gloss.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/FLAnimatedImage/FLAnimatedImage.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/Gloss/Gloss.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/PINCache/PINCache.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/PINRemoteImage/PINRemoteImage.framework"
 fi

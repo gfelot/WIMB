@@ -1,13 +1,28 @@
 PODS:
   - Alamofire (3.1.4)
+  - FLAnimatedImage (1.0.12)
   - Gloss (0.7.1)
+  - PINCache (2.2.2)
+  - PINRemoteImage (2.1):
+    - PINRemoteImage/FLAnimatedImage (= 2.1)
+  - PINRemoteImage/Core (2.1):
+    - PINCache (>= 2.1)
+  - PINRemoteImage/FLAnimatedImage (2.1):
+    - FLAnimatedImage (>= 1.0)
+    - PINRemoteImage/Core
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - Gloss (~> 0.7)
+  - PINRemoteImage (~> 2.1)
 
 SPEC CHECKSUMS:
   Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Gloss: e674d7aa06a7e292a591d0d39a759b826daf503e
+  PINCache: 078426d356ab95ef875e9e62e5c35a2ea3333c28
+  PINRemoteImage: e8367ac3f5c234712f1d8c274462ec834d649940
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 853c501df8ca6f8ae10e0bf9598f5cdaa6d77502
+
+COCOAPODS: 1.0.0.beta.5

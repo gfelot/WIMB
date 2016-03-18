@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import Gloss
+import Parse
+
 
 struct BookItems: Decodable {
     let data: [Book]?
@@ -20,62 +22,72 @@ struct BookItems: Decodable {
 
 struct Book: Decodable {
     
-    let id:String!
-    let selfLinkString:String!
-    let selfLink:NSURL!
-    let imagesLinks:imageLinks!
-    let coverURLString:String!
-    let coverURL:NSURL!
-    let title:String!
-    let authors:[String]!
-    let isbn:[ISBN]!
-    let desc:String!
-    let publisher:String!
-    let publishedDate:String!
-    let pageCount:Int!
-    let language:String!
-    let categories:[String]!
-    let averageRating:Double! //min 1 to max 5
-    let previewLinkString:String!
-    let previewLink:NSURL!
-
+    var data = JSON()
 
     init?(json: JSON) {
         
         let tools = Tools()
         
-        self.id = "id" <~~ json
-        self.selfLinkString = tools.httpsConverter("selfLink" <~~ json)
-        self.selfLink = NSURL(string: self.selfLinkString)
-        self.imagesLinks = "volumeInfo.imageLinks" <~~ json
-        self.coverURLString = tools.httpsConverter(self.imagesLinks.coverString)
-        self.coverURL = NSURL(string: self.coverURLString)
-        self.title = "volumeInfo.title" <~~ json
-        self.authors = "volumeInfo.authors" <~~ json
-        self.isbn = "volumeInfo.industryIdentifiers" <~~ json
-        self.desc = "volumeInfo.description" <~~ json
-        self.publisher = "volumeInfo.publisher" <~~ json
-        self.publishedDate = "volumeInfo.publishedDate" <~~ json
-        self.pageCount = "volumeInfo.pageCount" <~~ json
-        self.language = "volumeInfo.language" <~~ json
-        self.categories = "volumeInfo.categories" <~~ json
-        self.averageRating = "volumeInfo.averageRating" <~~ json
-        self.previewLinkString = tools.httpsConverter("volumeInfo.previewLink" <~~ json)
-        self.previewLink = NSURL(string: self.previewLinkString)
-        
+        if let _id: String = "id" <~~ json {
+            data["id"] = _id
+        }
+        if let selfLink: String = "selfLink" <~~ json {
+            data["selfLink"] = tools.httpsConverter(selfLink)
+        }
+        if let imageLinks: ImageLinks = "volumeInfo.imageLinks" <~~ json {
+            if let cover: String? = imageLinks.coverString {
+                data["cover"] = tools.httpsConverter(cover)
+            }
+        }
+        if let titre: String = "volumeInfo.title" <~~ json {
+            data["title"] = titre
+        }
+        if let authors: [String] = "volumeInfo.authors" <~~ json {
+            data["authors"] = authors
+        }
+        if let desc: String = "volumeInfo.description" <~~ json {
+            data["desc"] = desc
+        }
+        if let publisher : String = "volumeInfo.description" <~~ json {
+            data["publisher"] = publisher
+        }
+        if let publishedDate: String = "volumeInfo.publishedDate" <~~ json {
+            data["publishedDate"] = publishedDate
+        }
+        if let pageCount: String = "volumeInfo.pageCount" <~~ json {
+            data["pageCount"] = pageCount
+        }
+        if let language: String = "volumeInfo.language" <~~ json {
+            data["language"] = language
+        }
+        if let categories: [String] = "volumeInfo.categories" <~~ json {
+            data["categories"] = categories
+        }
+        if let averageRating: Double = "volumeInfo.averageRating" <~~ json {
+            data["averageRating"] = averageRating
+        }
     }
     
+    func prepareToCloud() -> PFObject {
+//        print("prepareToCLoud \n")
+        let book = PFObject(className: "Book")
+        book["userID"] = PFUser.currentUser()?.objectId
+        for (key, value) in data {
+            book[key] = value
+        }
+        return book
+    }
 }
 
-struct imageLinks: Decodable {
+struct ImageLinks: Decodable {
     
-    let coverString: String!
+    let coverString: String?
     
     init?(json: JSON) {
-        let medium: String! = "medium" <~~ json
-        let small: String! = "small" <~~ json
-        let thumbnail: String! = "thumbnail" <~~ json
-        let smallThumbnail: String! = "smallThumbnail" <~~ json
+        let medium: String? = "medium" <~~ json
+        let small: String? = "small" <~~ json
+        let thumbnail: String? = "thumbnail" <~~ json
+        let smallThumbnail: String? = "smallThumbnail" <~~ json
         
         if (medium != nil) {
             self.coverString = medium
@@ -92,12 +104,24 @@ struct imageLinks: Decodable {
     
 }
 
-struct ISBN:Decodable {
-    let type: String!
-    let identifier:String!
-    
-    init?(json: JSON) {
-        self.type = "type" <~~ json
-        self.identifier = "identifier" <~~ json
-    }
-}
+//struct ISBN: Decodable {
+//    
+//    enum Type: String {
+//        case ISBN10 = "ISBN_10"
+//        case ISBN13 = "ISBN_13"
+//    }
+//    
+//    let type: Type
+//    let identifier: String
+//    
+//    init?(json: JSON) {
+//        guard  let type: Type = "type" <~~ json,
+//            let identifier: String = "identifier" <~~ json else {
+//                return nil
+//        }
+//        
+//        self.type = type
+//        self.identifier = identifier
+//    }
+//    
+//}

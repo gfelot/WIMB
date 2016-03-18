@@ -13,40 +13,14 @@
       <sourceFolder url="file://$MODULE_DIR$/Resources/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WIMB/iu.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WIMB/Book.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WIMB/AppDelegate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WIMB/ScanBookViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WIMB/AppDelegate.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WIMB/Tools.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WIMB/ParallaxCollectionViewCell.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WIMB/LibraryViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WIMB/LoginViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WIMB/BookTest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WIMB/Book.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WIMB/BookViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Operators.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Decoder.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/ExtensionArray.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Encoder.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/ExtensionDictionary.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Gloss.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire.modulemap" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss-umbrella.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss.modulemap" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-resources.sh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.markdown" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.debug.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.modulemap" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-umbrella.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-frameworks.sh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.release.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Validation.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Response.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Error.swift" isTestSource="false" />
@@ -61,6 +35,34 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Request.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Upload.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Alamofire.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire.modulemap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss-umbrella.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss.modulemap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-resources.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.debug.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.modulemap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-umbrella.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-frameworks.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.markdown" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.release.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Operators.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Decoder.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/ExtensionArray.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Encoder.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/ExtensionDictionary.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Gloss.swift" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

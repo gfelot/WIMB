@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12EF4C01918A2A58141B7620 /* Pods_WIMB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6233B0B956A1D0C30A41F8 /* Pods_WIMB.framework */; };
+		6E4D5BBEC3318A00A0485040 /* Pods_WIMB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B32CF8521E312D093B1155 /* Pods_WIMB.framework */; };
 		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
 		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
@@ -22,11 +22,15 @@
 		AD45BDBB1C42B202007BD1B8 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45BDBA1C42B202007BD1B8 /* Book.swift */; };
 		AD45BDBD1C42C276007BD1B8 /* iu.png in Resources */ = {isa = PBXBuildFile; fileRef = AD45BDBC1C42C276007BD1B8 /* iu.png */; };
 		AD4A6F971C9958A100358127 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4A6F961C9958A100358127 /* Tools.swift */; };
+		AD4A6F9B1C99C07700358127 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4A6F9A1C99C07700358127 /* LibraryViewController.swift */; };
+		AD4A6F9D1C9B1B2400358127 /* ParallaxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4A6F9C1C9B1B2400358127 /* ParallaxCollectionViewCell.swift */; };
 		ADFA85071C3C683B007D2945 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFA85061C3C683B007D2945 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C55CCAFA3B1B771BEDA7160 /* Pods-WIMB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIMB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WIMB/Pods-WIMB.release.xcconfig"; sourceTree = "<group>"; };
+		0A48B8872BEA2BC39019ACE5 /* Pods-WIMB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIMB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WIMB/Pods-WIMB.debug.xcconfig"; sourceTree = "<group>"; };
+		15B32CF8521E312D093B1155 /* Pods_WIMB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WIMB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F25BF68D7AEDF38F3DA3BCC /* Pods-WIMB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIMB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WIMB/Pods-WIMB.release.xcconfig"; sourceTree = "<group>"; };
 		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,14 +45,14 @@
 		81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		825AC1B97D80536B25B10B12 /* Pods-WIMB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIMB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WIMB/Pods-WIMB.debug.xcconfig"; sourceTree = "<group>"; };
 		AD45BDB61C417CD7007BD1B8 /* ScanBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanBookViewController.swift; sourceTree = "<group>"; };
 		AD45BDB81C42B07D007BD1B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		AD45BDBA1C42B202007BD1B8 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		AD45BDBC1C42C276007BD1B8 /* iu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iu.png; sourceTree = "<group>"; };
 		AD4A6F961C9958A100358127 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		AD4A6F9A1C99C07700358127 /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		AD4A6F9C1C9B1B2400358127 /* ParallaxCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxCollectionViewCell.swift; sourceTree = "<group>"; };
 		ADFA85061C3C683B007D2945 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		EC6233B0B956A1D0C30A41F8 /* Pods_WIMB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WIMB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,22 +66,13 @@
 				81BA81771A49E0D500E65899 /* libsqlite3.dylib in Frameworks */,
 				81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */,
 				81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */,
-				12EF4C01918A2A58141B7620 /* Pods_WIMB.framework in Frameworks */,
+				6E4D5BBEC3318A00A0485040 /* Pods_WIMB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		551CFEE5D972CB60D6A04CF2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				825AC1B97D80536B25B10B12 /* Pods-WIMB.debug.xcconfig */,
-				4C55CCAFA3B1B771BEDA7160 /* Pods-WIMB.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +89,7 @@
 				814C3AC51B69877600E307BB /* Resources */,
 				81BA816A1A49DB5600E65899 /* Frameworks */,
 				81BA81461A49DA1800E65899 /* Products */,
-				551CFEE5D972CB60D6A04CF2 /* Pods */,
+				E9796568FA84FC7EA44B8C88 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,7 +123,7 @@
 				81BA816E1A49DB6800E65899 /* ParseFacebookUtils.framework */,
 				81BA81801A49E10C00E65899 /* ParseUI.framework */,
 				81BA81751A49E0C500E65899 /* System Frameworks */,
-				EC6233B0B956A1D0C30A41F8 /* Pods_WIMB.framework */,
+				15B32CF8521E312D093B1155 /* Pods_WIMB.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,8 +161,19 @@
 				ADFA85061C3C683B007D2945 /* LoginViewController.swift */,
 				AD45BDB61C417CD7007BD1B8 /* ScanBookViewController.swift */,
 				AD45BDB81C42B07D007BD1B8 /* BookViewController.swift */,
+				AD4A6F9A1C99C07700358127 /* LibraryViewController.swift */,
+				AD4A6F9C1C9B1B2400358127 /* ParallaxCollectionViewCell.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		E9796568FA84FC7EA44B8C88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A48B8872BEA2BC39019ACE5 /* Pods-WIMB.debug.xcconfig */,
+				5F25BF68D7AEDF38F3DA3BCC /* Pods-WIMB.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,13 +183,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81BA81641A49DA1800E65899 /* Build configuration list for PBXNativeTarget "WIMB" */;
 			buildPhases = (
-				78E754775556A6105780B583 /* Check Pods Manifest.lock */,
+				508EC32E68A8BC0336056C59 /* 📦 Check Pods Manifest.lock */,
 				81BA81411A49DA1800E65899 /* Sources */,
 				81BA81421A49DA1800E65899 /* Frameworks */,
 				81BA81431A49DA1800E65899 /* Resources */,
 				81CC85E11A49F6D40076DE19 /* Upload Symbol Files */,
-				690EF8FCBA9F08E304EF541D /* Embed Pods Frameworks */,
-				15EA45FBC0F1D38943D7503C /* Copy Pods Resources */,
+				F829C2F0C6AC0DB62E5A0477 /* 📦 Embed Pods Frameworks */,
+				62C10CB16BEA41863151B69B /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,49 +248,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15EA45FBC0F1D38943D7503C /* Copy Pods Resources */ = {
+		508EC32E68A8BC0336056C59 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		690EF8FCBA9F08E304EF541D /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		78E754775556A6105780B583 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		62C10CB16BEA41863151B69B /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		81CC85E11A49F6D40076DE19 /* Upload Symbol Files */ = {
@@ -301,6 +292,21 @@
 			shellPath = /bin/sh;
 			shellScript = "# This script will upload symbol files for your application,\n# so all your crash reports are going to be symbolicated\n\n# Important!\n# Before using the script, please initialize CloudCode folder and replace <path_to_cloudcode_folder> with the path to it\n#\n# Read more on Parse.com - https://parse.com/apps/quickstart#analytics/crashreporting/ios/\n############################################################\n\n\n# export PATH=/usr/local/bin:$PATH\n# cd <path_to_cloudcode_folder>\n\n# parse symbols -p \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
 		};
+		F829C2F0C6AC0DB62E5A0477 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -312,7 +318,9 @@
 				AD45BDB91C42B07D007BD1B8 /* BookViewController.swift in Sources */,
 				AD45BDB71C417CD7007BD1B8 /* ScanBookViewController.swift in Sources */,
 				AD4A6F971C9958A100358127 /* Tools.swift in Sources */,
+				AD4A6F9B1C99C07700358127 /* LibraryViewController.swift in Sources */,
 				AD45BDBB1C42B202007BD1B8 /* Book.swift in Sources */,
+				AD4A6F9D1C9B1B2400358127 /* ParallaxCollectionViewCell.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,7 +422,7 @@
 		};
 		81BA81651A49DA1800E65899 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 825AC1B97D80536B25B10B12 /* Pods-WIMB.debug.xcconfig */;
+			baseConfigurationReference = 0A48B8872BEA2BC39019ACE5 /* Pods-WIMB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -434,7 +442,7 @@
 		};
 		81BA81661A49DA1800E65899 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C55CCAFA3B1B771BEDA7160 /* Pods-WIMB.release.xcconfig */;
+			baseConfigurationReference = 5F25BF68D7AEDF38F3DA3BCC /* Pods-WIMB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
