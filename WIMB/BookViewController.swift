@@ -91,19 +91,26 @@ class BookViewController: UIViewController, ScanBookDelegate {
     @IBAction func saveBookToCloud(sender: AnyObject) {
         if myBook != nil {
             
-            
             let book = myBook!.prepareToCloud()
             
             book.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
-                    print("Book Save in Cloud")
+                    self.alertPopUp("Book Saved", message: "It's in the Cloud now")
                 } else {
                     print(error!)
                 }
             }
         
         }
+    }
+    
+    func alertPopUp(title:String, message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            self.navigationController?.popViewControllerAnimated(true)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     
@@ -116,20 +123,4 @@ class BookViewController: UIViewController, ScanBookDelegate {
         }
         
     }
-    
-    func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
-        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            completion(data: data, response: response, error: error)
-            }.resume()
-    }
-    
-    func downloadImage(url: NSURL){
-        getDataFromUrl(url) { (data, response, error)  in
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                guard let data = data where error == nil else { return }
-                self.bookImage.image = UIImage(data: data)
-            }
-        }
-    }
-
 }

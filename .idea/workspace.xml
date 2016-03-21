@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed874ee6-1321-4dc7-93a4-2be83e6d711c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WIMB/LibraryViewController.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WIMB/ParallaxCollectionViewCell.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WIMB/ParallaxTableViewController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WIMB.iml" afterPath="$PROJECT_DIR$/.idea/WIMB.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/Resources/Base.lproj/Main.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WIMB.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/WIMB.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WIMB/Book.swift" afterPath="$PROJECT_DIR$/WIMB/Book.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WIMB/BookViewController.swift" afterPath="$PROJECT_DIR$/WIMB/BookViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WIMB/Tools.swift" afterPath="$PROJECT_DIR$/WIMB/Tools.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WIMB/LibraryViewController.swift" afterPath="$PROJECT_DIR$/WIMB/LibraryViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WIMB/ParallaxCollectionViewCell.swift" afterPath="$PROJECT_DIR$/WIMB/ParallaxCollectionViewCell.swift" />
     </list>
     <ignored path="WIMB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +23,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_378547fb65dc490c573cdcb09638c24881c826a3" />
   <component name="FavoritesManager">
     <favorites_list name="WIMB" />
   </component>
@@ -41,31 +39,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Book.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Book.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WIMB/Book.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76363635">
+            <state vertical-scroll-proportion="0.0">
               <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookViewController.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WIMB/BookViewController.swift">
+      <file leaf-file-name="ParallaxCollectionViewCell.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WIMB/ParallaxCollectionViewCell.swift">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="2" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScanBookViewController.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WIMB/ScanBookViewController.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -84,6 +72,7 @@
         <option value="$PROJECT_DIR$/WIMB/BookViewController.swift" />
         <option value="$PROJECT_DIR$/WIMB/ScanBookViewController.swift" />
         <option value="$PROJECT_DIR$/WIMB/Book.swift" />
+        <option value="$PROJECT_DIR$/WIMB/ParallaxTableViewController.swift" />
       </list>
     </option>
   </component>
@@ -121,7 +110,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -196,6 +184,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -266,11 +255,35 @@
       </EXTENSION>
       <method />
     </configuration>
-    <list size="4">
+    <configuration default="false" name="FLAnimatedImage" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="FLAnimatedImage" CONFIG_NAME="Debug" SCHEME_NAME="FLAnimatedImage" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="PINCache" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="PINCache" CONFIG_NAME="Debug" SCHEME_NAME="PINCache" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="PINRemoteImage" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="PINRemoteImage" CONFIG_NAME="Debug" SCHEME_NAME="PINRemoteImage" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Application.ParseStarterProject-Swift" />
       <item index="1" class="java.lang.String" itemvalue="Application.Alamofire" />
       <item index="2" class="java.lang.String" itemvalue="Application.Gloss" />
       <item index="3" class="java.lang.String" itemvalue="Application.Pods-WIMB" />
+      <item index="4" class="java.lang.String" itemvalue="Application.FLAnimatedImage" />
+      <item index="5" class="java.lang.String" itemvalue="Application.PINCache" />
+      <item index="6" class="java.lang.String" itemvalue="Application.PINRemoteImage" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -327,6 +340,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WIMB/Book.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WIMB/BookViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="2" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WIMB/ScanBookViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Podfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -548,6 +593,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WIMB/ParallaxTableViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3090909">
+          <caret line="18" column="33" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WIMB/BookViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -558,7 +611,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WIMB/ScanBookViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.38181818">
           <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding />
         </state>
@@ -566,8 +619,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WIMB/Book.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76363635">
+        <state vertical-scroll-proportion="0.0">
           <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WIMB/ParallaxCollectionViewCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
