@@ -24,6 +24,7 @@
 		AD4A6F971C9958A100358127 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4A6F961C9958A100358127 /* Tools.swift */; };
 		AD4A6F9D1C9B1B2400358127 /* ParallaxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4A6F9C1C9B1B2400358127 /* ParallaxTableViewCell.swift */; };
 		AD4A6F9F1C9C6CFD00358127 /* LibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4A6F9E1C9C6CFD00358127 /* LibraryTableViewController.swift */; };
+		AD5D78891CA01AF10076F850 /* No_image.png in Resources */ = {isa = PBXBuildFile; fileRef = AD5D78881CA01AF10076F850 /* No_image.png */; };
 		ADFA85071C3C683B007D2945 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFA85061C3C683B007D2945 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		AD4A6F961C9958A100358127 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		AD4A6F9C1C9B1B2400358127 /* ParallaxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxTableViewCell.swift; sourceTree = "<group>"; };
 		AD4A6F9E1C9C6CFD00358127 /* LibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
+		AD5D78881CA01AF10076F850 /* No_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = No_image.png; sourceTree = "<group>"; };
 		ADFA85061C3C683B007D2945 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		81BA81471A49DA1800E65899 /* WIMB */ = {
 			isa = PBXGroup;
 			children = (
+				AD5D78881CA01AF10076F850 /* No_image.png */,
 				AD45BDBC1C42C276007BD1B8 /* iu.png */,
 				ADFA85031C3C5BF1007D2945 /* Model */,
 				ADFA85051C3C5BFD007D2945 /* ViewController */,
@@ -241,6 +244,7 @@
 			files = (
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				AD45BDBD1C42C276007BD1B8 /* iu.png in Resources */,
+				AD5D78891CA01AF10076F850 /* No_image.png in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

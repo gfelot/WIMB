@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where Is My Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYu-Ik-Rft">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Where Is My BookFromJSON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYu-Ik-Rft">
                                 <rect key="frame" x="210" y="40" width="178" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
@@ -109,12 +109,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="505" y="400"/>
+            <point key="canvasLocation" x="78" y="399.75"/>
         </scene>
         <!--Book View-->
         <scene sceneID="Byu-hj-3hm">
             <objects>
-                <viewController storyboardIdentifier="View Book" id="dIi-uc-9No" customClass="BookViewController" customModule="WIMB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="View BookFromJSON" id="dIi-uc-9No" customClass="BookViewController" customModule="WIMB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="24c-Nz-kH8"/>
                         <viewControllerLayoutGuide type="bottom" id="hzM-NH-p9B"/>
@@ -204,12 +204,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYN-V4-at9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="400"/>
+            <point key="canvasLocation" x="2260.5" y="399.75"/>
         </scene>
-        <!--Scan Book View Controller-->
+        <!--Scan BookFromJSON View Controller-->
         <scene sceneID="6ky-pi-mJK">
             <objects>
-                <viewController storyboardIdentifier="Scan Book" title="Scan Book View Controller" id="GEd-jG-cVi" customClass="ScanBookViewController" customModule="WIMB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Scan Book" title="Scan BookFromJSON View Controller" id="GEd-jG-cVi" customClass="ScanBookViewController" customModule="WIMB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z9W-3p-llQ"/>
                         <viewControllerLayoutGuide type="bottom" id="xku-mn-rGZ"/>
@@ -222,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5Y-Lj-B8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489" y="400"/>
+            <point key="canvasLocation" x="3067.5" y="395.25"/>
         </scene>
         <!--Library-->
         <scene sceneID="XTd-ZZ-LHg">
@@ -233,11 +233,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="parallaxCell" rowHeight="198" id="GTq-7H-ayY" customClass="ParallaxCollectionViewCell" customModule="WIMB" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="198"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="parallaxCell" rowHeight="198" id="GTq-7H-ayY" customClass="ParallaxTableViewCell" customModule="WIMB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="198"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GTq-7H-ayY" id="Gbd-4v-uOL">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="197.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="197"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts5-Qb-VIk">
@@ -277,11 +277,11 @@
                                             <exclude reference="Sz3-T1-jmi"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <exclude reference="HXW-MU-nyo"/>
                                             <exclude reference="2gk-pu-vZb"/>
                                             <exclude reference="5S3-HX-SaA"/>
                                             <exclude reference="F2w-HJ-VGF"/>
                                             <exclude reference="ny4-mL-HuU"/>
-                                            <exclude reference="HXW-MU-nyo"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -290,11 +290,11 @@
                                             <include reference="Sz3-T1-jmi"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <include reference="HXW-MU-nyo"/>
                                             <include reference="2gk-pu-vZb"/>
                                             <include reference="5S3-HX-SaA"/>
                                             <include reference="F2w-HJ-VGF"/>
                                             <include reference="ny4-mL-HuU"/>
-                                            <include reference="HXW-MU-nyo"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -321,7 +321,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRe-W9-QMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1510" y="400"/>
+            <point key="canvasLocation" x="1521" y="399.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Et-de-7WU">
@@ -340,7 +340,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHH-aq-40g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="400"/>
+            <point key="canvasLocation" x="828" y="399.75"/>
         </scene>
     </scenes>
 </document>

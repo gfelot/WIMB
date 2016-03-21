@@ -1,5 +1,5 @@
 //
-//  ParallaxTableViewCell
+//  ParallaxTableViewCell.swift
 //  WIMB
 //
 //  Created by Gil Felot on 17/03/16.

@@ -13,14 +13,12 @@ import Parse
 
 class LibraryTableViewController: UITableViewController {
 
-    let parallaxCellIdentifier = "parallaxCell"
+//    let parallaxCellIdentifier = "parallaxCell"
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imgBook: UIImageView!
     
-    var bookImages = [String?]()
-    var bookTitle = [String?]()
-    var objectID = [String?]()
+    var myLib: [BookFromCloud] = []
     
     // Change the ratio or enter a fixed value, whatever you need
     var cellHeight: CGFloat {
@@ -43,20 +41,16 @@ class LibraryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad ok\n")
 
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        bookImages = [String?]()
-        bookTitle = [String?]()
-        objectID = [String?]()
-        
         let query = PFQuery(className: "Book")
         
         query.whereKey("userID", equalTo: (PFUser.currentUser()?.objectId)!)
+        print(query)
         
         query.findObjectsInBackgroundWithBlock { (books, error) in
             guard (books != nil) else {
@@ -65,26 +59,9 @@ class LibraryTableViewController: UITableViewController {
             }
             
             for book in books! {
-                print("Book :\n\(book)\n\n")
-                if let coverString = book["cover"] {
-                    self.bookImages.append(coverString as? String)
-                } else {
-                    self.bookImages.append(nil)
-                }
-                
-                if let titleString = book["title"] {
-                    self.bookTitle.append(titleString as? String)
-                } else {
-                    self.bookTitle.append("No Title")
-                }
-                
-                // fix that
-//                if let idString = book["objectID"] {
-//                    self.objectID.append(idString as? String)
-//                }
+                let myBook = BookFromCloud(book: book)
+                self.myLib.append(myBook)
             }
-            
-//            print(self.objectID)
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView?.reloadData()
@@ -112,23 +89,24 @@ class LibraryTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return bookTitle.count
+        return myLib.count
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("parallaxCell", forIndexPath: indexPath) as! ParallaxTableViewCell
-        let imgString = bookImages[indexPath.row]
+        let bookData = myLib[indexPath.row]
+        let imgString = bookData.data["cover"]
         if imgString != nil {
-            if let url = NSURL(string: imgString!) {
+            if let url = NSURL(string: imgString! as! String) {
                 cell.imageBook.pin_setImageFromURL(url)
             }
         }else{
-            cell.imageView?.image = UIImage(named: "iu")!
+            cell.imageView?.image = UIImage(named: "No_image")!
         }
         cell.cellHeight.constant = parallaxImageHeight
         cell.cellTop.constant = parallaxOffsetFor(tableView.contentOffset.y, cell: cell)
-        cell.titleLabel.text = bookTitle[indexPath.row]
+        cell.titleLabel.text = bookData.data["title"] as? String
         return cell
     }
     
@@ -150,17 +128,26 @@ class LibraryTableViewController: UITableViewController {
 //    }
     
     
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            let bookData = myLib[indexPath.row]
+            let objectId = bookData.data["objectId"] as! String
+            let query = PFQuery(className: "Book")
+            query.whereKey("objectId", equalTo: objectId)
+            query.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error) in
+                for object in objects! {
+                    object.deleteEventually()
+                }
+            })
+            myLib.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+  
     }
-    */
+    
 
 
     /*

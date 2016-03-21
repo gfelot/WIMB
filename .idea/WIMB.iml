@@ -15,12 +15,11 @@
       <sourceFolder url="file://$MODULE_DIR$/WIMB/iu.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WIMB/ScanBookViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WIMB/AppDelegate.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WIMB/ParallaxTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WIMB/ParallaxCollectionViewCell.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WIMB/LibraryViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/WIMB/LoginViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WIMB/Tools.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WIMB/LibraryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WIMB/LoginViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WIMB/Book.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WIMB/ParallaxTableViewCell.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WIMB/BookViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Validation.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Response.swift" isTestSource="false" />
@@ -36,6 +35,16 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Request.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Upload.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Alamofire.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Operators.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Decoder.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/ExtensionArray.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Encoder.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/ExtensionDictionary.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Gloss.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/FLAnimatedImage/FLAnimatedImage/FLAnimatedImage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/FLAnimatedImage/FLAnimatedImage/FLAnimatedImage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/FLAnimatedImage/FLAnimatedImage/FLAnimatedImageView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/FLAnimatedImage/FLAnimatedImage/FLAnimatedImageView.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINCache/PINCache/Nullability.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINCache/PINCache/PINMemoryCache.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINCache/PINCache/PINDiskCache.m" isTestSource="false" />
@@ -43,79 +52,69 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINCache/PINCache/PINDiskCache.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINCache/PINCache/PINCache.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINCache/PINCache/PINMemoryCache.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/FLAnimatedImage/FLAnimatedImage/FLAnimatedImage.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/FLAnimatedImage/FLAnimatedImage/FLAnimatedImage.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/FLAnimatedImage/FLAnimatedImage/FLAnimatedImageView.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/FLAnimatedImage/FLAnimatedImage/FLAnimatedImageView.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Operators.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/ExtensionArray.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Encoder.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Decoder.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/ExtensionDictionary.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Gloss/Sources/Gloss.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire.modulemap" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/FLAnimatedImage-umbrella.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/FLAnimatedImage.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/FLAnimatedImage.modulemap" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/FLAnimatedImage-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/FLAnimatedImage-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss-umbrella.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss.modulemap" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Gloss/Gloss-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-resources.sh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.markdown" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.debug.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-umbrella.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.modulemap" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-frameworks.sh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.release.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/FLAnimatedImage-umbrella.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/FLAnimatedImage.modulemap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/FLAnimatedImage.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/FLAnimatedImage-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FLAnimatedImage/FLAnimatedImage-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINCache/PINCache-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINCache/PINCache-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINCache/PINCache.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINCache/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINCache/PINCache-umbrella.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINCache/PINCache.modulemap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-resources.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.markdown" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.debug.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-acknowledgements.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.modulemap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-umbrella.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-frameworks.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-WIMB/Pods-WIMB.release.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINRemoteImage/PINRemoteImage-umbrella.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINRemoteImage/PINRemoteImage.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINRemoteImage/PINRemoteImage-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINRemoteImage/PINRemoteImage-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINRemoteImage/PINRemoteImage-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINRemoteImage/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PINRemoteImage/PINRemoteImage.modulemap" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageTask.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageCallbacks.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageTask.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageDownloadTask.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageProcessorTask.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINProgressiveImage.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageProcessorTask.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageCategoryManager.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageProcessorTask.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageTask.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINProgressiveImage.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageManager.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageCategoryManager.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINDataTaskOperation.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/PINImageView+PINRemoteImage.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/PINImageView+PINRemoteImage.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/FLAnimatedImageView+PINRemoteImage.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/PINButton+PINRemoteImage.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/FLAnimatedImageView+PINRemoteImage.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/PINButton+PINRemoteImage.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImage.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageCategoryManager.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINDataTaskOperation.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageManagerResult.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageDownloadTask.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINDataTaskOperation.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/PINImageView+PINRemoteImage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/PINImageView+PINRemoteImage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/FLAnimatedImageView+PINRemoteImage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/FLAnimatedImageView+PINRemoteImage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/PINButton+PINRemoteImage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Image Categories/PINButton+PINRemoteImage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageCategoryManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageDownloadTask.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINDataTaskOperation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageManagerResult.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Categories/PINImage+DecodedImage.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Categories/PINImage+WebP.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Categories/NSData+ImageDetectors.h" isTestSource="false" />
@@ -123,7 +122,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Categories/PINImage+WebP.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/Categories/NSData+ImageDetectors.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINURLSessionManager.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageManagerResult.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImage.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageCallbacks.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINRemoteImageMacros.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/PINRemoteImage/Pod/Classes/PINURLSessionManager.h" isTestSource="false" />

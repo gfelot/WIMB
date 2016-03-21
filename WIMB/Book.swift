@@ -1,5 +1,5 @@
 //
-//  Book.swift
+//  BookFromJSON.swift
 //  WIMB
 //
 //  Created by Gil Felot on 10/01/16.
@@ -13,14 +13,14 @@ import Parse
 
 
 struct BookItems: Decodable {
-    let data: [Book]?
+    let data: [BookFromJSON]?
     
     init?(json: JSON) {
         self.data = "items" <~~ json
     }
 }
 
-struct Book: Decodable {
+struct BookFromJSON: Decodable {
     
     var data = JSON()
 
@@ -48,7 +48,7 @@ struct Book: Decodable {
         if let desc: String = "volumeInfo.description" <~~ json {
             data["desc"] = desc
         }
-        if let publisher : String = "volumeInfo.description" <~~ json {
+        if let publisher : String = "volumeInfo.publisher" <~~ json {
             data["publisher"] = publisher
         }
         if let publishedDate: String = "volumeInfo.publishedDate" <~~ json {
@@ -69,8 +69,7 @@ struct Book: Decodable {
     }
     
     func prepareToCloud() -> PFObject {
-//        print("prepareToCLoud \n")
-        let book = PFObject(className: "Book")
+        let book = PFObject(className: "BookFromJSON")
         book["userID"] = PFUser.currentUser()?.objectId
         for (key, value) in data {
             book[key] = value
@@ -101,6 +100,28 @@ struct ImageLinks: Decodable {
             self.coverString = nil
         }
     }
+    
+}
+
+struct BookFromCloud {
+    var data = JSON()
+    
+    init(book: PFObject) {
+        self.data["objectId"] = book.objectId
+        self.data["authors"] = book["authors"]
+        self.data["averageRating"] = book["averageRating"]
+        self.data["categories"] = book["categories"]
+        self.data["cover"] = book["cover"]
+        self.data["id"] = book["id"]
+        self.data["language"] = book["language"]
+        self.data["publishedDate"] = book["publishedDate"]
+        self.data["publisher"] = book["publisher"]
+        self.data["selfLink"] = book["selfLink"]
+        self.data["title"] = book["title"]
+        self.data["userID"] = book["userID"]
+    }
+    
+    
     
 }
 

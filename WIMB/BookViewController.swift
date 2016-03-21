@@ -13,7 +13,7 @@ import PINRemoteImage
 
 class BookViewController: UIViewController, ScanBookDelegate {
     
-    var myBook:Book?
+    var myBook: BookFromJSON?
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var bookImage: UIImageView!
