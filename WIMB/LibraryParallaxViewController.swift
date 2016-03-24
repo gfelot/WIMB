@@ -13,6 +13,7 @@ import Parse
 class LibraryParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     @IBOutlet weak var tableView: UITableView?
     
+    
     var myLib: [BookFromCloud] = []
     
     override func viewDidLoad() {

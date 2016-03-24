@@ -22,14 +22,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var loginStatut = true
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        username.delegate = self
+        password.delegate = self
+        
 
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+//        var nav = self.navigationController?.navigationBar
+//        nav?.barStyle = UIBarStyle.Black
+//        nav?.tintColor = UIColor.whiteColor()
+        
         let me = PFUser.currentUser()
         
         if me!.username != nil {
@@ -43,6 +52,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Don't forget to unsubscribe to KB notification
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+
 
     @IBAction func connectAction(sender: AnyObject) {
         guard username.text != "" && password.text != "" else {
