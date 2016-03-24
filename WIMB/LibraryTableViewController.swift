@@ -50,8 +50,6 @@ class LibraryTableViewController: UITableViewController {
         let query = PFQuery(className: "Book")
         
         query.whereKey("userID", equalTo: (PFUser.currentUser()?.objectId)!)
-        print(query)
-        
         query.findObjectsInBackgroundWithBlock { (books, error) in
             guard (books != nil) else {
                 print(error)
@@ -81,14 +79,12 @@ class LibraryTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        print(myLib.count)
         return myLib.count
     }
 
@@ -96,18 +92,39 @@ class LibraryTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("parallaxCell", forIndexPath: indexPath) as! ParallaxTableViewCell
         let bookData = myLib[indexPath.row]
-        let imgString = bookData.data["cover"]
-        if imgString != nil {
-            if let url = NSURL(string: imgString! as! String) {
-                cell.imageBook.pin_setImageFromURL(url)
-            }
+        let imgPFFile = bookData.data["coverFile"] as? PFFile
+        if imgPFFile != nil {
+            imgPFFile?.getDataInBackgroundWithBlock({ (imageData, error) in
+                if error == nil {
+                    if let imageData = imageData {
+                        let image = UIImage(data:imageData)
+                        cell.imageBook.image = image
+                    }
+                } else {
+                    print(error)
+                }
+            })
         }else{
+            print("No No et No")
             cell.imageView?.image = UIImage(named: "No_image")!
         }
         cell.cellHeight.constant = parallaxImageHeight
         cell.cellTop.constant = parallaxOffsetFor(tableView.contentOffset.y, cell: cell)
         cell.titleLabel.text = bookData.data["title"] as? String
         return cell
+    }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showBook", sender: indexPath)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showBook" {
+            let vc = segue.destinationViewController as! BookViewController
+            let row = sender!.row
+            vc.myBookFromCloud = myLib[row]
+        }
     }
     
     // Used when the table dequeues a cell, or when it scrolls
@@ -117,16 +134,20 @@ class LibraryTableViewController: UITableViewController {
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         let offsetY = tableView.contentOffset.y
+        let c = tableView.visibleCells as! [ParallaxTableViewCell]
+        print("Cell count :")
+        print(c.count)
         for cell in tableView.visibleCells as! [ParallaxTableViewCell] {
             cell.cellTop.constant = parallaxOffsetFor(offsetY, cell: cell)
         }
     }
 
-//    @IBAction func logout(sender: AnyObject) {
-//        //        PFUser.logOut()
-//        //        self.performSegueWithIdentifier("logout", sender: self)
-//    }
     
+    @IBAction func logout(sender: AnyObject) {
+        PFUser.logOut()
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+        presentViewController(viewController, animated: true, completion: nil)
+    }
     
     
     // Override to support editing the table view.
@@ -147,17 +168,6 @@ class LibraryTableViewController: UITableViewController {
         }
   
     }
-    
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

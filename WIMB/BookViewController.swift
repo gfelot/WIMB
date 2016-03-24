@@ -11,72 +11,48 @@ import Parse
 import Alamofire
 import PINRemoteImage
 
+extension UIImageView{
+    
+    func makeBlurImage(targetImageView:UIImageView?)
+    {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = targetImageView!.bounds
+        
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+        targetImageView?.addSubview(blurEffectView)
+    }
+    
+}
+
 class BookViewController: UIViewController, ScanBookDelegate {
     
     var myBook: BookFromJSON?
+    var myBookFromCloud: BookFromCloud?
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var bookImage: UIImageView!
+//    @IBOutlet var myView: BookView!
+    @IBOutlet weak var myView: BookView!
     
-
-    @IBOutlet weak var bookTitle: UILabel!
-    @IBOutlet weak var authors: UILabel!
-    @IBOutlet weak var desc: UILabel!
-    @IBOutlet weak var pageCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let bounds = UIScreen.mainScreen().bounds
-//        let width = bounds.size.width
-        scrollView.contentSize.width = 300
-        scrollView.contentSize.height = 4000000
-        if myBook == nil {
+
+        if myBook == nil &&  myBookFromCloud == nil{
             performSegueWithIdentifier("scanCode", sender: nil)
         }
     }
     
     override func viewDidLayoutSubviews() {
         if myBook != nil {
-            
-            if let coverString  = myBook?.data["cover"] as! String! {
-                if let url = NSURL(string: coverString) {
-                    bookImage.pin_setImageFromURL(url)
-                }
-            }
-
-            
-            if let _title = myBook?.data["title"] as! String! {
-                bookTitle.text = _title
-            }else {
-                bookTitle.text = "No Title"
-            }
-            bookTitle.numberOfLines = 0
-            bookTitle.sizeToFit()
-            
-            if let _author = myBook!.data["authors"] as! [String]? {
-                authors.text = _author.first
-            }else{
-                authors.text = "No Author"
-            }
-            authors.numberOfLines = 0
-            authors.sizeToFit()
-            
-            if let _desc = myBook?.data["desc"] as! String! {
-                desc.text = _desc
-            }else {
-                desc.text = "No Description"
-            }
-            desc.numberOfLines = 0
-            desc.sizeToFit()
-            
-            if let _pageCount = myBook!.data["pageCount"] as! String! {
-                pageCount.text = String(_pageCount)
-            } else {
-                pageCount.text = "No Page Count"
-            }
-            pageCount.numberOfLines = 0
-            pageCount.sizeToFit()
+            fillFromAPI()
+        } else if myBookFromCloud != nil {
+            fillFromCloud()
         }
+        
+        let imgOriginal = myView.bookImage
+        let imgBack = myView.backgroudImage
+        imgOriginal.makeBlurImage(imgBack)
+        
     }
 
     
@@ -91,7 +67,7 @@ class BookViewController: UIViewController, ScanBookDelegate {
     @IBAction func saveBookToCloud(sender: AnyObject) {
         if myBook != nil {
             
-            let book = myBook!.prepareToCloud()
+            let book = myBook!.prepareToCloud(myView.bookImage.image!)
             
             book.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
@@ -103,6 +79,79 @@ class BookViewController: UIViewController, ScanBookDelegate {
             }
         
         }
+    }
+    func fillFromAPI() {
+        if let coverString  = myBook?.data["cover"] as! String! {
+            if let url = NSURL(string: coverString) {
+                myView.bookImage.pin_setImageFromURL(url)
+            } else {
+                myView.bookImage.image = UIImage(named: "No_image")
+            }
+        } else {
+            myView.bookImage.image = UIImage(named: "No_image")
+        }
+        
+        
+        if let _title = myBook?.data["title"] as! String! {
+            myView.titleBook.text = _title
+        } else {
+            myView.titleBook.text = "No Title"
+        }
+        myView.titleBook.numberOfLines = 0
+        myView.titleBook.sizeToFit()
+        
+        if let _author = myBook!.data["authors"] as! [String]? {
+            myView.authorsBook.text = _author.first
+        }else{
+            myView.authorsBook.text = "No Author"
+        }
+        myView.authorsBook.numberOfLines = 0
+        myView.authorsBook.sizeToFit()
+        
+        if let _desc = myBook?.data["desc"] as! String! {
+            myView.descBook.text = _desc
+        }else {
+            myView.descBook.text = "No Description"
+        }
+        myView.descBook.numberOfLines = 0
+        myView.descBook.sizeToFit()
+    }
+    
+    func fillFromCloud() {
+        let imageFile = myBookFromCloud?.data["coverFile"]
+        imageFile?.getDataInBackgroundWithBlock({ (imageData, error) in
+            if error == nil {
+                if let imageData = imageData {
+                    self.myView.bookImage.image = UIImage(data: imageData)
+                }
+            }
+        })
+        
+        if let _title = myBookFromCloud?.data["title"] as! String! {
+            myView.titleBook.text = _title
+        } else {
+            myView.titleBook.text = "No Title"
+        }
+        myView.titleBook.numberOfLines = 0
+        myView.titleBook.sizeToFit()
+        
+        if let _author = myBookFromCloud!.data["authors"] as! [String]? {
+            myView.authorsBook.text = _author.first
+        }else{
+            myView.authorsBook.text = "No Author"
+        }
+        myView.authorsBook.numberOfLines = 0
+        myView.authorsBook.sizeToFit()
+        
+        if let _desc = myBookFromCloud?.data["desc"] as! String! {
+            myView.descBook.text = _desc
+        }else {
+            myView.descBook.text = "No Description"
+        }
+        myView.descBook.numberOfLines = 0
+        myView.descBook.sizeToFit()
+        
+        
     }
     
     func alertPopUp(title:String, message:String) {
@@ -117,7 +166,6 @@ class BookViewController: UIViewController, ScanBookDelegate {
     func didScanBook(scannedBook:BookItems!)
     {
         let bookItems: BookItems! = scannedBook
-        print(bookItems.data?.first)
         if bookItems != nil {
             myBook = bookItems.data?.first
         }

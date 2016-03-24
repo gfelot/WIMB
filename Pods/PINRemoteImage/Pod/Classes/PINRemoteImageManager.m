@@ -14,6 +14,7 @@
 #import <PINCache/PINCache.h>
 
 #import "PINRemoteImage.h"
+#import "PINRemoteLock.h"
 #import "PINProgressiveImage.h"
 #import "PINRemoteImageCallbacks.h"
 #import "PINRemoteImageTask.h"
@@ -96,7 +97,7 @@ typedef void (^PINRemoteImageManagerDataCompletion)(NSData *data, NSError *error
 @interface PINRemoteImageManager () <PINURLSessionManagerDelegate>
 {
     dispatch_queue_t _callbackQueue;
-    NSLock *_lock;
+    PINRemoteLock *_lock;
     NSOperationQueue *_concurrentOperationQueue;
     NSOperationQueue *_urlSessionTaskQueue;
 }
@@ -173,8 +174,7 @@ static dispatch_once_t sharedDispatchToken;
             configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         }
         _callbackQueue = dispatch_queue_create("PINRemoteImageManagerCallbackQueue", DISPATCH_QUEUE_CONCURRENT);
-        _lock = [[NSLock alloc] init];
-        _lock.name = @"PINRemoteImageManager";
+        _lock = [[PINRemoteLock alloc] initWithName:@"PINRemoteImageManager"];
         _concurrentOperationQueue = [[NSOperationQueue alloc] init];
         _concurrentOperationQueue.name = @"PINRemoteImageManager Concurrent Operation Queue";
         _concurrentOperationQueue.maxConcurrentOperationCount = NSOperationQueueDefaultMaxConcurrentOperationCount;
@@ -227,12 +227,12 @@ static dispatch_once_t sharedDispatchToken;
     [_lock unlock];
 }
 
-- (void)setAuthenticationChallenge:(PINRemoteImageManagerAuthenticationChallenge)aChallenge {
+- (void)setAuthenticationChallenge:(PINRemoteImageManagerAuthenticationChallenge)challengeBlock {
 	__weak typeof(self) weakSelf = self;
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		typeof(self) strongSelf = weakSelf;
 		[strongSelf lock];
-		strongSelf.authenticationChallengeHandler = aChallenge;
+		strongSelf.authenticationChallengeHandler = challengeBlock;
 		[strongSelf unlock];
 	});
 }
@@ -1062,7 +1062,7 @@ static dispatch_once_t sharedDispatchToken;
     }];
 }
 
-- (void)setProgressImageCallback:(nullable PINRemoteImageManagerImageCompletion)progressImageBlock ofTaskWithUUID:(nonnull NSUUID *)UUID
+- (void)setProgressImageCallback:(nullable PINRemoteImageManagerImageCompletion)progressImageCallback ofTaskWithUUID:(nonnull NSUUID *)UUID
 {
     if (UUID == nil) {
         return;
@@ -1079,7 +1079,7 @@ static dispatch_once_t sharedDispatchToken;
                 if ([blockUUID isEqual:UUID]) {
                     if ([task isKindOfClass:[PINRemoteImageDownloadTask class]]) {
                         PINRemoteImageCallbacks *callbacks = task.callbackBlocks[blockUUID];
-                        callbacks.progressImageBlock = progressImageBlock;
+                        callbacks.progressImageBlock = progressImageCallback;
                     }
                     break;
                 }

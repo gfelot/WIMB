@@ -68,9 +68,13 @@ struct BookFromJSON: Decodable {
         }
     }
     
-    func prepareToCloud() -> PFObject {
-        let book = PFObject(className: "BookFromJSON")
+    func prepareToCloud(image:UIImage) -> PFObject {
+        let book = PFObject(className: "Book")
         book["userID"] = PFUser.currentUser()?.objectId
+        let imageData: NSData = UIImagePNGRepresentation(image)!
+        let imageFile = PFFile(name: "cover.png", data: imageData)
+        book["coverFile"] = imageFile
+        
         for (key, value) in data {
             book[key] = value
         }
@@ -112,6 +116,7 @@ struct BookFromCloud {
         self.data["averageRating"] = book["averageRating"]
         self.data["categories"] = book["categories"]
         self.data["cover"] = book["cover"]
+        self.data["coverFile"] = book["coverFile"] as? PFFile
         self.data["id"] = book["id"]
         self.data["language"] = book["language"]
         self.data["publishedDate"] = book["publishedDate"]
