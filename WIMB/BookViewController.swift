@@ -11,26 +11,25 @@ import Parse
 import Alamofire
 import PINRemoteImage
 
-extension UIImageView{
-    
-    func makeBlurImage(targetImageView:UIImageView?)
-    {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = targetImageView!.bounds
-        
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
-        targetImageView?.addSubview(blurEffectView)
-    }
-    
-}
+//extension UIImageView{
+//    
+//    func makeBlurImage(targetImageView:UIImageView?)
+//    {
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = targetImageView!.bounds
+//        
+//        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+//        targetImageView?.addSubview(blurEffectView)
+//    }
+//    
+//}
 
 class BookViewController: UIViewController, ScanBookDelegate {
     
     var myBook: BookFromJSON?
     var myBookFromCloud: BookFromCloud?
     
-//    @IBOutlet var myView: BookView!
     @IBOutlet weak var myView: BookView!
     
     
@@ -48,10 +47,6 @@ class BookViewController: UIViewController, ScanBookDelegate {
         } else if myBookFromCloud != nil {
             fillFromCloud()
         }
-        
-        let imgOriginal = myView.bookImage
-        let imgBack = myView.backgroudImage
-        imgOriginal.makeBlurImage(imgBack)
         
     }
 
@@ -80,6 +75,7 @@ class BookViewController: UIViewController, ScanBookDelegate {
         
         }
     }
+    
     func fillFromAPI() {
         if let coverString  = myBook?.data["cover"] as! String! {
             if let url = NSURL(string: coverString) {

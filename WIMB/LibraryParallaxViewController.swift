@@ -112,7 +112,7 @@ class LibraryParallaxViewController: UIViewController, UITableViewDelegate, UITa
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showBook" {
-            let vc = segue.destinationViewController as! BookViewController
+            let vc = segue.destinationViewController as! BookViewParallaxController
             let row = sender!.row
             vc.myBookFromCloud = myLib[row]
         }
