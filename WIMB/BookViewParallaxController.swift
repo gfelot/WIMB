@@ -11,13 +11,18 @@ import Parse
 import Alamofire
 import PINRemoteImage
 
+extension Double {
+    func toString() -> String {
+        return String(format: "%.1f",self)
+    }
+}
 
 class BookViewParallaxController: UITableViewController, ScanBookDelegate {
 
     @IBOutlet var tableview: UITableView!
     
     var headerView = ParallaxHeaderView()
-    
+    let cellIdentifier = "bookCell"
     var myBook: BookFromJSON?
     var myBookFromCloud: BookFromCloud?
     
@@ -32,12 +37,92 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         } else if myBookFromCloud != nil {
             fillFromCloud()
         }
+        configureTableView()
+        
+    }
+    
+    func configureTableView() {
         self.tableview.tableHeaderView = headerView
+        self.tableView.estimatedRowHeight = 160.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        deselectAllRows()
     }
+    
+    func deselectAllRows() {
+        if let selectedRows = tableView.indexPathsForSelectedRows as [NSIndexPath]! {
+            for indexPath in selectedRows {
+                tableView.deselectRowAtIndexPath(indexPath, animated: false)
+            }
+        }
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return fillMyCell(indexPath)
+    }
+    
+    func fillMyCell(indexPath:NSIndexPath) -> BookTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)! as! BookTableViewCell
+        if indexPath.row == 0 {
+            setBookTitle(cell)
+        } else if indexPath.row == 1 {
+            setBookAuthor(cell)
+        } else if indexPath.row == 2 {
+            setBookDesc(cell)
+        }
+        else if indexPath.row == 3 {
+            setBookMark(cell)
+        }
+        return cell
+    }
+    
+    func setBookTitle(cell:BookTableViewCell) {
+        cell.titleLabel.text = "Titre :"
+        if let title = myBookFromCloud?.data["title"] as? String {
+            cell.subtitleLabel.text = title
+        } else {
+            cell.subtitleLabel.text = "No Title"
+        }
+    }
+    
+    func setBookAuthor(cell:BookTableViewCell) {
+        cell.titleLabel.text = "Auteur :"
+        if let authors = myBookFromCloud?.data["authors"] as? [String] {
+            cell.subtitleLabel.text = authors.first
+        } else {
+            cell.subtitleLabel.text = "No Author Provided !"
+        }
+        
+    }
+    
+    func setBookDesc(cell:BookTableViewCell) {
+        cell.titleLabel.text = "Description :"
+        if let desc = myBookFromCloud?.data["desc"] {
+            cell.subtitleLabel.text = desc as? String
+        } else {
+            cell.subtitleLabel.text = "No Description"
+        }
+        
+    }
+    
+    func setBookMark(cell:BookTableViewCell) {
+        cell.titleLabel.text = "Note :"
+        if let note:Double = myBookFromCloud?.data["averageRating"] as? Double{
+            cell.subtitleLabel.text = note.toString()
+        } else {
+            cell.subtitleLabel.text = "0"
+        }
+        
+    }
+
+
     
     //Set book view controller as delegate to scan book view controller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -78,7 +163,6 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         })
         
     }
-    
 
     @IBAction func saveBookToCloud(sender: AnyObject) {
         print("Test")

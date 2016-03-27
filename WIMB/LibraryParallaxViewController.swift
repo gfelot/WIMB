@@ -11,9 +11,9 @@ import UIKit
 import Parse
 
 class LibraryParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+    
     @IBOutlet weak var tableView: UITableView?
-    
-    
+
     var myLib: [BookFromCloud] = []
     
     override func viewDidLoad() {
@@ -55,7 +55,7 @@ class LibraryParallaxViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell: ParallaxCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! ParallaxCell
+        let cell  = tableView.dequeueReusableCellWithIdentifier("Cell") as! ParallaxCell
         let bookData = myLib[indexPath.row]
         let imgPFFile = bookData.data["coverFile"] as? PFFile
         if imgPFFile != nil {

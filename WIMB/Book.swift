@@ -117,6 +117,7 @@ struct BookFromCloud {
         self.data["categories"] = book["categories"]
         self.data["cover"] = book["cover"]
         self.data["coverFile"] = book["coverFile"] as? PFFile
+        self.data["desc"] = book["desc"]
         self.data["id"] = book["id"]
         self.data["language"] = book["language"]
         self.data["publishedDate"] = book["publishedDate"]

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		77DA978B74205B4E520CBB47 /* Pods_WIMB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE031FA061FADEA3C40AF91 /* Pods_WIMB.framework */; };
-		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
 		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
 		81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816B1A49DB6800E65899 /* Bolts.framework */; };
@@ -17,28 +16,25 @@
 		81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81781A49E0DB00E65899 /* AudioToolbox.framework */; };
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
-		AD10D85C1CA14E9A00E4EFCF /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD10D85B1CA14E9A00E4EFCF /* BookView.swift */; };
-		AD10D85E1CA14EA600E4EFCF /* BookView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD10D85D1CA14EA600E4EFCF /* BookView.xib */; };
 		AD45BDB71C417CD7007BD1B8 /* ScanBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45BDB61C417CD7007BD1B8 /* ScanBookViewController.swift */; };
-		AD45BDB91C42B07D007BD1B8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45BDB81C42B07D007BD1B8 /* BookViewController.swift */; };
 		AD45BDBB1C42B202007BD1B8 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45BDBA1C42B202007BD1B8 /* Book.swift */; };
 		AD4A6F971C9958A100358127 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4A6F961C9958A100358127 /* Tools.swift */; };
 		AD5D78891CA01AF10076F850 /* No_image.png in Resources */ = {isa = PBXBuildFile; fileRef = AD5D78881CA01AF10076F850 /* No_image.png */; };
 		ADACC62E1CA59E5D00385B72 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = ADACC6271CA59E5D00385B72 /* UIImage+ImageEffects.m */; };
 		ADACC6301CA59E5D00385B72 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADACC62B1CA59E5D00385B72 /* ParallaxHeaderView.m */; };
 		ADACC6331CA5A14F00385B72 /* BookViewParallaxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADACC6321CA5A14F00385B72 /* BookViewParallaxController.swift */; };
-		ADEE9D931CA3F880001FC2DA /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEE9D921CA3F880001FC2DA /* bg.png */; };
 		ADEE9D951CA42B7C001FC2DA /* LibraryParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE9D941CA42B7C001FC2DA /* LibraryParallaxViewController.swift */; };
 		ADEE9D971CA42BAD001FC2DA /* ParallaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE9D961CA42BAD001FC2DA /* ParallaxCell.swift */; };
 		ADEE9D9A1CA434CE001FC2DA /* libraryBG.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADEE9D991CA434CE001FC2DA /* libraryBG.jpeg */; };
 		ADFA85071C3C683B007D2945 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFA85061C3C683B007D2945 /* LoginViewController.swift */; };
+		F5C260AD1CA84E10009EA44C /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C260AC1CA84E10009EA44C /* BookTableViewCell.swift */; };
+		F5C260B01CA87567009EA44C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5C260AF1CA87567009EA44C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E41549BFC6F00A6A443496B /* Pods-WIMB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIMB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WIMB/Pods-WIMB.release.xcconfig"; sourceTree = "<group>"; };
 		649906093952C7AC5084BA93 /* Pods-WIMB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIMB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WIMB/Pods-WIMB.debug.xcconfig"; sourceTree = "<group>"; };
 		7AE031FA061FADEA3C40AF91 /* Pods_WIMB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WIMB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BA81451A49DA1800E65899 /* WIMB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIMB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,10 +48,7 @@
 		81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		AD10D85B1CA14E9A00E4EFCF /* BookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
-		AD10D85D1CA14EA600E4EFCF /* BookView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookView.xib; sourceTree = "<group>"; };
 		AD45BDB61C417CD7007BD1B8 /* ScanBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanBookViewController.swift; sourceTree = "<group>"; };
-		AD45BDB81C42B07D007BD1B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		AD45BDBA1C42B202007BD1B8 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		AD4A6F961C9958A100358127 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		AD5D78881CA01AF10076F850 /* No_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = No_image.png; sourceTree = "<group>"; };
@@ -65,11 +58,12 @@
 		ADACC62A1CA59E5D00385B72 /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
 		ADACC62B1CA59E5D00385B72 /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
 		ADACC6321CA5A14F00385B72 /* BookViewParallaxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewParallaxController.swift; sourceTree = "<group>"; };
-		ADEE9D921CA3F880001FC2DA /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		ADEE9D941CA42B7C001FC2DA /* LibraryParallaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryParallaxViewController.swift; sourceTree = "<group>"; };
 		ADEE9D961CA42BAD001FC2DA /* ParallaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxCell.swift; sourceTree = "<group>"; };
 		ADEE9D991CA434CE001FC2DA /* libraryBG.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = libraryBG.jpeg; sourceTree = "<group>"; };
 		ADFA85061C3C683B007D2945 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F5C260AC1CA84E10009EA44C /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		F5C260AE1CA87567009EA44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,15 +124,13 @@
 		81BA81471A49DA1800E65899 /* WIMB */ = {
 			isa = PBXGroup;
 			children = (
+				F5C2609B1CA7E232009EA44C /* Image */,
 				AD10D85A1CA14D7F00E4EFCF /* View */,
-				AD5D78881CA01AF10076F850 /* No_image.png */,
-				ADEE9D921CA3F880001FC2DA /* bg.png */,
-				ADEE9D991CA434CE001FC2DA /* libraryBG.jpeg */,
 				ADFA85031C3C5BF1007D2945 /* Model */,
 				ADFA85051C3C5BFD007D2945 /* ViewController */,
 				AD520D701C6B4FBB00EFD1D6 /* Controller */,
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
-				814C3AC61B69877600E307BB /* Main.storyboard */,
+				F5C260AF1CA87567009EA44C /* Main.storyboard */,
 			);
 			path = WIMB;
 			sourceTree = "<group>";
@@ -171,8 +163,6 @@
 		AD10D85A1CA14D7F00E4EFCF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AD10D85B1CA14E9A00E4EFCF /* BookView.swift */,
-				AD10D85D1CA14EA600E4EFCF /* BookView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -221,10 +211,27 @@
 				ADEE9D981CA43236001FC2DA /* LibraryVC */,
 				ADFA85061C3C683B007D2945 /* LoginViewController.swift */,
 				AD45BDB61C417CD7007BD1B8 /* ScanBookViewController.swift */,
-				AD45BDB81C42B07D007BD1B8 /* BookViewController.swift */,
-				ADACC6321CA5A14F00385B72 /* BookViewParallaxController.swift */,
+				F5C260A91CA84DB5009EA44C /* BookViewParallax */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		F5C2609B1CA7E232009EA44C /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				AD5D78881CA01AF10076F850 /* No_image.png */,
+				ADEE9D991CA434CE001FC2DA /* libraryBG.jpeg */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		F5C260A91CA84DB5009EA44C /* BookViewParallax */ = {
+			isa = PBXGroup;
+			children = (
+				ADACC6321CA5A14F00385B72 /* BookViewParallaxController.swift */,
+				F5C260AC1CA84E10009EA44C /* BookTableViewCell.swift */,
+			);
+			name = BookViewParallax;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,12 +297,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
-				AD10D85E1CA14EA600E4EFCF /* BookView.xib in Resources */,
 				AD5D78891CA01AF10076F850 /* No_image.png in Resources */,
-				ADEE9D931CA3F880001FC2DA /* bg.png in Resources */,
 				ADEE9D9A1CA434CE001FC2DA /* libraryBG.jpeg in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
+				F5C260B01CA87567009EA44C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,11 +373,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD10D85C1CA14E9A00E4EFCF /* BookView.swift in Sources */,
 				ADFA85071C3C683B007D2945 /* LoginViewController.swift in Sources */,
-				AD45BDB91C42B07D007BD1B8 /* BookViewController.swift in Sources */,
 				ADACC6301CA59E5D00385B72 /* ParallaxHeaderView.m in Sources */,
 				ADACC6331CA5A14F00385B72 /* BookViewParallaxController.swift in Sources */,
+				F5C260AD1CA84E10009EA44C /* BookTableViewCell.swift in Sources */,
 				ADACC62E1CA59E5D00385B72 /* UIImage+ImageEffects.m in Sources */,
 				AD45BDB71C417CD7007BD1B8 /* ScanBookViewController.swift in Sources */,
 				ADEE9D971CA42BAD001FC2DA /* ParallaxCell.swift in Sources */,
@@ -386,14 +390,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		814C3AC61B69877600E307BB /* Main.storyboard */ = {
+		F5C260AF1CA87567009EA44C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				814C3AC71B69877600E307BB /* Base */,
+				F5C260AE1CA87567009EA44C /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../Resources;
-			sourceTree = "<group>";
+			path = "/Users/gfelot/Downloads/WIMB-master/WIMB/../Resources";
+			sourceTree = "<absolute>";
 		};
 /* End PBXVariantGroup section */
 
