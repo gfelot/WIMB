@@ -125,6 +125,7 @@ struct BookFromCloud {
         self.data["selfLink"] = book["selfLink"]
         self.data["title"] = book["title"]
         self.data["userID"] = book["userID"]
+        self.data["myNote"] = book["myNote"]
     }
     
     

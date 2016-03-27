@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Gloss
 import Alamofire
 import PINRemoteImage
 
@@ -23,33 +24,31 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
     
     var headerView = ParallaxHeaderView()
     let cellIdentifier = "bookCell"
-    var myBook: BookFromJSON?
+    var myBook = JSON()
+    var myBookFromJSON: BookFromJSON?
     var myBookFromCloud: BookFromCloud?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        if myBook == nil &&  myBookFromCloud == nil{
+        if myBookFromJSON == nil &&  myBookFromCloud == nil {
             performSegueWithIdentifier("scanCode", sender: nil)
-        }
-        if myBook != nil {
-            fillFromAPI()
+        } else if myBookFromJSON != nil {
+            fillFromJSON()
         } else if myBookFromCloud != nil {
             fillFromCloud()
         }
         configureTableView()
-        
+        deselectAllRows()
     }
     
     func configureTableView() {
         self.tableview.tableHeaderView = headerView
         self.tableView.estimatedRowHeight = 160.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        deselectAllRows()
     }
     
     func deselectAllRows() {
@@ -85,7 +84,7 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
     
     func setBookTitle(cell:BookTableViewCell) {
         cell.titleLabel.text = "Titre :"
-        if let title = myBookFromCloud?.data["title"] as? String {
+        if let title = myBook["title"] as? String {
             cell.subtitleLabel.text = title
         } else {
             cell.subtitleLabel.text = "No Title"
@@ -94,7 +93,7 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
     
     func setBookAuthor(cell:BookTableViewCell) {
         cell.titleLabel.text = "Auteur :"
-        if let authors = myBookFromCloud?.data["authors"] as? [String] {
+        if let authors = myBook["authors"] as? [String] {
             cell.subtitleLabel.text = authors.first
         } else {
             cell.subtitleLabel.text = "No Author Provided !"
@@ -104,7 +103,7 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
     
     func setBookDesc(cell:BookTableViewCell) {
         cell.titleLabel.text = "Description :"
-        if let desc = myBookFromCloud?.data["desc"] {
+        if let desc = myBook["desc"] {
             cell.subtitleLabel.text = desc as? String
         } else {
             cell.subtitleLabel.text = "No Description"
@@ -114,7 +113,7 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
     
     func setBookMark(cell:BookTableViewCell) {
         cell.titleLabel.text = "Note :"
-        if let note:Double = myBookFromCloud?.data["averageRating"] as? Double{
+        if let note:Double = myBook["averageRating"] as? Double{
             cell.subtitleLabel.text = note.toString()
         } else {
             cell.subtitleLabel.text = "0"
@@ -132,8 +131,8 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         }
     }
     
-    func fillFromAPI() {
-        if let coverString  = myBook?.data["cover"] as! String! {
+    func fillFromJSON() {
+        if let coverString  = myBookFromJSON?.data["cover"] as! String! {
             if let url = NSURL(string: coverString) {
                 let imgView = UIImageView()
                 imgView.pin_setImageFromURL(url)
@@ -147,6 +146,15 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         } else {
             headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "No_image"), forSize: CGSizeMake(self.tableview.frame.size.height, 300)) as! ParallaxHeaderView
         }
+        myBook["title"] = myBookFromJSON?.data["title"] as? String
+        myBook["authors"] = myBookFromJSON?.data["authors"] as? [String]
+        myBook["desc"] = myBookFromJSON?.data["desc"] as? String
+        myBook["publisher"] = myBookFromJSON?.data["publisher"] as? String
+        myBook["publishedDate"] = myBookFromJSON?.data["publishedDate"] as? String
+        myBook["pageCount"] = myBookFromJSON?.data["pageCount"] as? String
+        myBook["categories"] = myBookFromJSON?.data["categories"] as? [String]
+        myBook["averageRating"] = myBookFromJSON?.data["averageRating"] as? Double
+        myBook["myNote"] = ""
         
     }
     
@@ -162,13 +170,22 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
             }
         })
         
+        myBook["title"] = myBookFromCloud?.data["title"] as? String
+        myBook["authors"] = myBookFromCloud?.data["authors"] as? [String]
+        myBook["desc"] = myBookFromCloud?.data["desc"] as? String
+        myBook["publisher"] = myBookFromCloud?.data["publisher"] as? String
+        myBook["publishedDate"] = myBookFromCloud?.data["publishedDate"] as? String
+        myBook["pageCount"] = myBookFromCloud?.data["pageCount"] as? String
+        myBook["categories"] = myBookFromCloud?.data["categories"] as? [String]
+        myBook["averageRating"] = myBookFromCloud?.data["averageRating"] as? Double
+        myBook["myNote"] = myBookFromCloud?.data["myNote"] as? String
+        
     }
 
     @IBAction func saveBookToCloud(sender: AnyObject) {
-        print("Test")
-        if myBook != nil {
+        if myBookFromJSON != nil {
             
-            let book = myBook!.prepareToCloud((headerView.headerImage.images?.first)!)
+            let book = myBookFromJSON!.prepareToCloud((headerView.headerImage.images?.first)!)
             
             print(book)
             
@@ -196,7 +213,9 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
     {
         let bookItems: BookItems! = scannedBook
         if bookItems != nil {
-            myBook = bookItems.data?.first
+            print("Ok3")
+            myBookFromJSON = bookItems.data?.first
+            print(myBookFromJSON)
         }
         
     }
