@@ -24,6 +24,7 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
     
     var headerView = ParallaxHeaderView()
     let cellIdentifier = "bookCell"
+    var imgView = UIImage()
     var myBook = JSON()
     var myBookFromJSON: BookFromJSON?
     var myBookFromCloud: BookFromCloud?
@@ -37,19 +38,21 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         if myBookFromJSON == nil &&  myBookFromCloud == nil {
             performSegueWithIdentifier("scanCode", sender: nil)
         } else if myBookFromJSON != nil {
-            print("My Book \(myBookFromJSON)")
             fillFromJSON()
+            print(imgView)
         } else if myBookFromCloud != nil {
             fillFromCloud()
         }
         configureTableView()
-        deselectAllRows()
+        
     }
     
     func configureTableView() {
-        self.tableview.tableHeaderView = headerView
-        self.tableView.estimatedRowHeight = 160.0
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+//        tableview.tableHeaderView = headerView
+        tableView.estimatedRowHeight = 160.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        deselectAllRows()
+        tableview.reloadData()
     }
     
     func deselectAllRows() {
@@ -121,8 +124,6 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         }
         
     }
-
-
     
     //Set book view controller as delegate to scan book view controller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -132,21 +133,20 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         }
     }
     
-    func fillFromJSON() {
-        print("\n\nPass ici\n")
+    func fillFromJSON(){
         if let coverString  = myBookFromJSON?.data["cover"] as! String! {
             if let url = NSURL(string: coverString) {
-                let imgView = UIImageView()
-                imgView.pin_setImageFromURL(url)
-                headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(imgView.image, forSize: CGSizeMake(self.tableview.frame.size.height, 300)) as! ParallaxHeaderView
-                self.tableview.tableHeaderView = headerView
-                
-            } else {
-                
-                headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "No_image"), forSize: CGSizeMake(self.tableview.frame.size.height, 300)) as! ParallaxHeaderView
+                print(url)
+                let imageView = UIImageView()
+                imageView.pin_setImageFromURL(url, completion: { (PINRemoteImageManagerResult) in
+                    self.headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(imageView.image, forSize: CGSizeMake(self.tableview.frame.size.height, 300)) as! ParallaxHeaderView
+                    self.tableview.tableHeaderView = self.headerView
+                })
             }
         } else {
+            imgView = UIImage(named: "No_image")!
             headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "No_image"), forSize: CGSizeMake(self.tableview.frame.size.height, 300)) as! ParallaxHeaderView
+            self.tableview.tableHeaderView = self.headerView
         }
         myBook["title"] = myBookFromJSON?.data["title"] as? String
         myBook["authors"] = myBookFromJSON?.data["authors"] as? [String]
@@ -157,6 +157,7 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         myBook["categories"] = myBookFromJSON?.data["categories"] as? [String]
         myBook["averageRating"] = myBookFromJSON?.data["averageRating"] as? Double
         myBook["myNote"] = ""
+        print("\n-----------\n")
         
     }
     
@@ -165,6 +166,7 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         imageFile?.getDataInBackgroundWithBlock({ (imageData, error) in
             if error == nil {
                 if let imageData = imageData {
+                    
                     self.headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(data: imageData), forSize: CGSizeMake(self.tableview.frame.size.height, 300)) as! ParallaxHeaderView
                     self.tableview.tableHeaderView = self.headerView
                     
@@ -221,11 +223,10 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
     func didScanBook(scannedBook:BookItems!)
     {
         let bookItems: BookItems! = scannedBook
-        if bookItems != nil {
-            print("Ok3")
+        if bookItems.data?.first != nil {
             myBookFromJSON = bookItems.data?.first
-            print(myBookFromJSON!)
-            print("Ok4")
+        } else {
+            alertPopUp("This ISNB code isn't avaible", message: "Nothing found in the database")
         }
         
     }
