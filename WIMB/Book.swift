@@ -67,19 +67,6 @@ struct BookFromJSON: Decodable {
             data["averageRating"] = averageRating
         }
     }
-    
-    func prepareToCloud(image:UIImage) -> PFObject {
-        let book = PFObject(className: "Book")
-        book["userID"] = PFUser.currentUser()?.objectId
-        let imageData: NSData = UIImagePNGRepresentation(image)!
-        let imageFile = PFFile(name: "cover.png", data: imageData)
-        book["coverFile"] = imageFile
-        
-        for (key, value) in data {
-            book[key] = value
-        }
-        return book
-    }
 }
 
 struct ImageLinks: Decodable {

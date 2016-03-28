@@ -27,8 +27,8 @@
 		ADEE9D971CA42BAD001FC2DA /* ParallaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE9D961CA42BAD001FC2DA /* ParallaxCell.swift */; };
 		ADEE9D9A1CA434CE001FC2DA /* libraryBG.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADEE9D991CA434CE001FC2DA /* libraryBG.jpeg */; };
 		ADFA85071C3C683B007D2945 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFA85061C3C683B007D2945 /* LoginViewController.swift */; };
+		F5002E601CA9155D007C7B33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5002E5F1CA9155D007C7B33 /* Main.storyboard */; };
 		F5C260AD1CA84E10009EA44C /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C260AC1CA84E10009EA44C /* BookTableViewCell.swift */; };
-		F5C260B01CA87567009EA44C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5C260AF1CA87567009EA44C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +62,8 @@
 		ADEE9D961CA42BAD001FC2DA /* ParallaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxCell.swift; sourceTree = "<group>"; };
 		ADEE9D991CA434CE001FC2DA /* libraryBG.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = libraryBG.jpeg; sourceTree = "<group>"; };
 		ADFA85061C3C683B007D2945 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F5002E5F1CA9155D007C7B33 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F5C260AC1CA84E10009EA44C /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
-		F5C260AE1CA87567009EA44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 				ADFA85051C3C5BFD007D2945 /* ViewController */,
 				AD520D701C6B4FBB00EFD1D6 /* Controller */,
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
-				F5C260AF1CA87567009EA44C /* Main.storyboard */,
+				F5002E5F1CA9155D007C7B33 /* Main.storyboard */,
 			);
 			path = WIMB;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 				AD5D78891CA01AF10076F850 /* No_image.png in Resources */,
 				ADEE9D9A1CA434CE001FC2DA /* libraryBG.jpeg in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
-				F5C260B01CA87567009EA44C /* Main.storyboard in Resources */,
+				F5002E601CA9155D007C7B33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,18 +388,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		F5C260AF1CA87567009EA44C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F5C260AE1CA87567009EA44C /* Base */,
-			);
-			name = Main.storyboard;
-			path = "/Users/gfelot/Downloads/WIMB-master/WIMB/../Resources";
-			sourceTree = "<absolute>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		81BA81621A49DA1800E65899 /* Debug */ = {

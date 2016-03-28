@@ -37,6 +37,7 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         if myBookFromJSON == nil &&  myBookFromCloud == nil {
             performSegueWithIdentifier("scanCode", sender: nil)
         } else if myBookFromJSON != nil {
+            print("My Book \(myBookFromJSON)")
             fillFromJSON()
         } else if myBookFromCloud != nil {
             fillFromCloud()
@@ -132,6 +133,7 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
     }
     
     func fillFromJSON() {
+        print("\n\nPass ici\n")
         if let coverString  = myBookFromJSON?.data["cover"] as! String! {
             if let url = NSURL(string: coverString) {
                 let imgView = UIImageView()
@@ -183,12 +185,8 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
     }
 
     @IBAction func saveBookToCloud(sender: AnyObject) {
-        if myBookFromJSON != nil {
-            
-            let book = myBookFromJSON!.prepareToCloud((headerView.headerImage.images?.first)!)
-            
-            print(book)
-            
+            let book = prepareToCloud(headerView.headerImage)
+        
             book.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
@@ -197,8 +195,19 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
                     print(error!)
                 }
             }
-            
+    }
+    
+    func prepareToCloud(image:UIImage) -> PFObject {
+        let book = PFObject(className: "Book")
+        book["userID"] = PFUser.currentUser()?.objectId
+        let imageData: NSData = UIImagePNGRepresentation(image)!
+        let imageFile = PFFile(name: "cover.png", data: imageData)
+        book["coverFile"] = imageFile
+        
+        for (key, value) in myBook {
+            book[key] = value
         }
+        return book
     }
     
     func alertPopUp(title:String, message:String) {
@@ -215,7 +224,8 @@ class BookViewParallaxController: UITableViewController, ScanBookDelegate {
         if bookItems != nil {
             print("Ok3")
             myBookFromJSON = bookItems.data?.first
-            print(myBookFromJSON)
+            print(myBookFromJSON!)
+            print("Ok4")
         }
         
     }
