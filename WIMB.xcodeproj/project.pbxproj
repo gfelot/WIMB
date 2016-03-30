@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		77DA978B74205B4E520CBB47 /* Pods_WIMB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE031FA061FADEA3C40AF91 /* Pods_WIMB.framework */; };
-		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
 		81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816B1A49DB6800E65899 /* Bolts.framework */; };
 		81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816C1A49DB6800E65899 /* Parse.framework */; };
@@ -28,6 +27,8 @@
 		ADEE9D9A1CA434CE001FC2DA /* libraryBG.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADEE9D991CA434CE001FC2DA /* libraryBG.jpeg */; };
 		ADFA85071C3C683B007D2945 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFA85061C3C683B007D2945 /* LoginViewController.swift */; };
 		F5002E601CA9155D007C7B33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5002E5F1CA9155D007C7B33 /* Main.storyboard */; };
+		F555132E1CA97676008AE5EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F555132D1CA97676008AE5EE /* Images.xcassets */; };
+		F59D2C8F1CAA363800BBA50D /* EditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59D2C8E1CAA363800BBA50D /* EditionViewController.swift */; };
 		F5C260AD1CA84E10009EA44C /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C260AC1CA84E10009EA44C /* BookTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +36,6 @@
 		3E41549BFC6F00A6A443496B /* Pods-WIMB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIMB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WIMB/Pods-WIMB.release.xcconfig"; sourceTree = "<group>"; };
 		649906093952C7AC5084BA93 /* Pods-WIMB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIMB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WIMB/Pods-WIMB.debug.xcconfig"; sourceTree = "<group>"; };
 		7AE031FA061FADEA3C40AF91 /* Pods_WIMB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WIMB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BA81451A49DA1800E65899 /* WIMB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIMB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BA814A1A49DA1800E65899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		ADEE9D991CA434CE001FC2DA /* libraryBG.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = libraryBG.jpeg; sourceTree = "<group>"; };
 		ADFA85061C3C683B007D2945 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F5002E5F1CA9155D007C7B33 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F555132D1CA97676008AE5EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F59D2C8E1CAA363800BBA50D /* EditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditionViewController.swift; sourceTree = "<group>"; };
 		F5C260AC1CA84E10009EA44C /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +98,7 @@
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				814C3AC81B69877600E307BB /* Images.xcassets */,
+				F555132D1CA97676008AE5EE /* Images.xcassets */,
 				814C3AC91B69877600E307BB /* Info.plist */,
 			);
 			path = Resources;
@@ -207,13 +209,38 @@
 		ADFA85051C3C5BFD007D2945 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F59D2C901CAB201400BBA50D /* EditionVC */,
 				ADACC6241CA59E3400385B72 /* ParallaxTableViewheader */,
 				ADEE9D981CA43236001FC2DA /* LibraryVC */,
-				ADFA85061C3C683B007D2945 /* LoginViewController.swift */,
-				AD45BDB61C417CD7007BD1B8 /* ScanBookViewController.swift */,
-				F5C260A91CA84DB5009EA44C /* BookViewParallax */,
+				F555132A1CA95CA9008AE5EE /* LoginVC */,
+				F55513291CA95C94008AE5EE /* ScanBookVC */,
+				F5C260A91CA84DB5009EA44C /* BookViewVC */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		F55513291CA95C94008AE5EE /* ScanBookVC */ = {
+			isa = PBXGroup;
+			children = (
+				AD45BDB61C417CD7007BD1B8 /* ScanBookViewController.swift */,
+			);
+			name = ScanBookVC;
+			sourceTree = "<group>";
+		};
+		F555132A1CA95CA9008AE5EE /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				ADFA85061C3C683B007D2945 /* LoginViewController.swift */,
+			);
+			name = LoginVC;
+			sourceTree = "<group>";
+		};
+		F59D2C901CAB201400BBA50D /* EditionVC */ = {
+			isa = PBXGroup;
+			children = (
+				F59D2C8E1CAA363800BBA50D /* EditionViewController.swift */,
+			);
+			name = EditionVC;
 			sourceTree = "<group>";
 		};
 		F5C2609B1CA7E232009EA44C /* Image */ = {
@@ -225,13 +252,13 @@
 			name = Image;
 			sourceTree = "<group>";
 		};
-		F5C260A91CA84DB5009EA44C /* BookViewParallax */ = {
+		F5C260A91CA84DB5009EA44C /* BookViewVC */ = {
 			isa = PBXGroup;
 			children = (
 				ADACC6321CA5A14F00385B72 /* BookViewParallaxController.swift */,
 				F5C260AC1CA84E10009EA44C /* BookTableViewCell.swift */,
 			);
-			name = BookViewParallax;
+			name = BookViewVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,8 +325,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5D78891CA01AF10076F850 /* No_image.png in Resources */,
+				F555132E1CA97676008AE5EE /* Images.xcassets in Resources */,
 				ADEE9D9A1CA434CE001FC2DA /* libraryBG.jpeg in Resources */,
-				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
 				F5002E601CA9155D007C7B33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADFA85071C3C683B007D2945 /* LoginViewController.swift in Sources */,
+				F59D2C8F1CAA363800BBA50D /* EditionViewController.swift in Sources */,
 				ADACC6301CA59E5D00385B72 /* ParallaxHeaderView.m in Sources */,
 				ADACC6331CA5A14F00385B72 /* BookViewParallaxController.swift in Sources */,
 				F5C260AD1CA84E10009EA44C /* BookTableViewCell.swift in Sources */,

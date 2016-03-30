@@ -9,6 +9,7 @@
 
 import UIKit
 import Parse
+import SCLAlertView
 
 class LibraryParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
@@ -72,7 +73,6 @@ class LibraryParallaxViewController: UIViewController, UITableViewDelegate, UITa
         }else{
             cell.imageView?.image = UIImage(named: "No_image")!
         }
-//        cell.titleLabel.text = bookData.data["title"] as? String
         return cell
     }
     
@@ -100,6 +100,7 @@ class LibraryParallaxViewController: UIViewController, UITableViewDelegate, UITa
                     object.deleteEventually()
                 }
             })
+            SCLAlertView().showWarning("Book Erased", subTitle: myLib[indexPath.row].data["title"]! as! String)
             myLib.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }

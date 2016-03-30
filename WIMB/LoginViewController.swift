@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import SCLAlertView
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -19,7 +20,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     
     var activityIndicator = UIActivityIndicatorView()
-    
+//    let alertView = SCLAlertView()
     var loginStatut = true
     
     
@@ -34,10 +35,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        var nav = self.navigationController?.navigationBar
-//        nav?.barStyle = UIBarStyle.Black
-//        nav?.tintColor = UIColor.whiteColor()
         
         let me = PFUser.currentUser()
         
@@ -66,7 +63,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func connectAction(sender: AnyObject) {
         guard username.text != "" && password.text != "" else {
-            alertPopUp("Error in Form", message: "Please enter a username AND a password")
+            SCLAlertView().showError("Error in Form", subTitle: "Please enter a username AND a password")
             return
         }
         waitingIndicator()
@@ -94,7 +91,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBAction func FBLogin(sender: AnyObject) {
-        alertPopUp("Not Implemented Yet !!!", message: "But I'm gonna do it soon I promise.")
+        SCLAlertView().showError("Not Implemented Yet !!!", subTitle: "But I'm gonna do it soon I promise.")
     }
     
     func tryToSignUp(_username: String!, _password: String!) {
@@ -109,7 +106,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 if let errorString = error!.userInfo["error"] as? String {
                     errorMessage = errorString
                 }
-                self.alertPopUp("Failed Sign Up", message: errorMessage)
+                SCLAlertView().showError("Failed Sign Up", subTitle: errorMessage)
                 return
             }
             self.performSegueWithIdentifier("login", sender: self)
@@ -125,7 +122,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 if let errorString = error!.userInfo["error"] as? String {
                     errorMessage = errorString
                 }
-                self.alertPopUp("Failed Login", message: errorMessage)
+                SCLAlertView().showError("Failed Login", subTitle: errorMessage)
                 return
             }
             self.performSegueWithIdentifier("login", sender: self)
@@ -140,14 +137,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
-    }
-    
-    func alertPopUp(title:String, message:String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
     }
     
 }

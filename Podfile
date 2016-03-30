@@ -8,5 +8,6 @@ target 'WIMB' do
   pod 'Alamofire', '~> 3.0'
   pod 'Gloss', '~> 0.7'
   pod 'PINRemoteImage', '~> 2.1'
+  pod 'SCLAlertView'
 end
 
